@@ -1,0 +1,1165 @@
+<!DOCTYPE html >
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>DataConversionUtil.cls</title>
+
+<link rel="StyleSheet" href="../css/stylesheet.css"
+	type="text/css" media="all">
+
+</head>
+<body>
+
+	<!-- package name  and class name-->
+	<div class="pkg_class_name">
+		 <a href="package.html">Utils</a>: DataConversionUtil CLASS 
+	</div>
+	<br>
+	<!--Class Name -->
+	<div  class="title_name">
+	DataConversionUtil 
+	
+		CLASS</div>
+
+	<!-- class comment should go here -->
+	<div class="paragraph">
+	<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Main helper class to handle data conversion operations
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Author(s)</span>:
+	  										Wayfare
+						<br>
+	  <span class="detail_field_title" width="50px">Notes</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Created</span>:
+	  										Mon Oct 18 11:55:04 EEST 2024
+						<br>
+	</div>
+	
+				
+		
+		
+	<!-- extends section-->
+				<div  class="section">Super Class</div>
+		<div  class="paragraph">
+		<span class="code">
+						Progress.Lang.Object			
+			</span>
+	</div>
+	
+	<!-- inherits section-->
+		
+
+	<!-- CONSTRUCTOR SUMMARY SECTION -->
+		<!-- CONSTRUCTOR SUMMARY SECTION END -->
+
+	<!-- methods summary section -->
+		<div class="title_name">
+		Methods<br>
+	</div>
+	
+	
+
+	<table class="table_summary" cellspacing="0" summary="">
+
+		 
+									<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#DateTimeToString_Method"
+						title="DateTimeToString">DateTimeToString(INPUT:datetime):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#DateTimeTzToString_Method"
+						title="DateTimeTzToString">DateTimeTzToString(INPUT:datetime-tz):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#DateToISOString_Method"
+						title="DateToISOString">DateToISOString(INPUT:date):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#DateToString_Method"
+						title="DateToString">DateToString(INPUT:date):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#DecimalToString_Method"
+						title="DecimalToString">DecimalToString(INPUT:decimal):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#FormatDate_Method"
+						title="FormatDate">FormatDate(INPUT:date,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#FormatDateTime_Method"
+						title="FormatDateTime">FormatDateTime(INPUT:datetime,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#FormatDateTimeTz_Method"
+						title="FormatDateTimeTz">FormatDateTimeTz(INPUT:datetime-tz,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#FormatInputDate_Method"
+						title="FormatInputDate">FormatInputDate(INPUT:character,INPUT:integer,INPUT:integer,INPUT:integer,INPUT:integer,INPUT:integer,INPUT:integer,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#Int64ToString_Method"
+						title="Int64ToString">Int64ToString(INPUT:int64):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#IntegerToString_Method"
+						title="IntegerToString">IntegerToString(INPUT:integer):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#LogicalToString_Method"
+						title="LogicalToString">LogicalToString(INPUT:logical,INPUT:logical):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#StringToDate_Method"
+						title="StringToDate">StringToDate(INPUT:character):DATE</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#StringToDateTime_Method"
+						title="StringToDateTime">StringToDateTime(INPUT:character):DATETIME</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#StringToDateTimeTz_Method"
+						title="StringToDateTimeTz">StringToDateTimeTz(INPUT:character):DATETIME-TZ</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#StringToDecimal_Method"
+						title="StringToDecimal">StringToDecimal(INPUT:character):DECIMAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#StringToInt64_Method"
+						title="StringToInt64">StringToInt64(INPUT:character):INT64</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#StringToInteger_Method"
+						title="StringToInteger">StringToInteger(INPUT:character):INTEGER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="DataConversionUtil.cls.html#StringToLogical_Method"
+						title="StringToLogical">StringToLogical(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+												</tr>
+			</table>
+	
+		<!-- method summary section end -->
+
+
+	<!-- EVENT SUMMARY SECTION -->
+		<!-- EVENT SUMMARY SECTION END -->
+
+	<!-- PROPERTY SUMMARY SECTION -->
+		<!-- PROPERTY SUMMARY SECTION END -->
+
+	
+<!-- VARIABLE SUMMARY SECTION -->
+<!-- VARIABLE SUMMARY SECTION END -->
+
+
+<!-- BUFFER SUMMARY SECTION -->
+<!-- BUFFER SUMMARY SECTION END -->
+
+<!-- DATASET SUMMARY SECTION -->
+<!-- DATASET SUMMARY SECTION END -->
+
+
+<!-- DATA-SOURCE SUMMARY SECTION -->
+<!-- DATA-SOURCE SUMMARY SECTION END -->
+
+<!-- QUERY SUMMARY SECTION -->
+<!-- QUERY SUMMARY SECTION END -->
+
+<!-- TEMP-TABLE SUMMARY SECTION -->
+<!-- TEMP-TABLE SUMMARY SECTION END -->
+	
+	<!-- ============ CONSTRUCTOR DETAIL ========== --> 
+		
+	<!-- ============ END CONSTRUCTOR DETAIL ========== --> 
+	<!-- ============ METHOD DETAIL ========== -->
+	
+		
+	<div class="title_name">
+		Method Detail<br>
+	</div>
+	 
+		<hr/>
+	<a name="DateTimeToString_Method"></a>
+	<div class="section">DateTimeToString method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a DATETIME to its string representation
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, string representation of the DATETIME
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">DateTimeToString(INPUT:datetime):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdtDateTime</span>&nbsp;
+										DATETIME			
+							&nbsp; as datetime, the datetime to be converted
+					</div>
+																		
+		<hr/>
+	<a name="DateTimeTzToString_Method"></a>
+	<div class="section">DateTimeTzToString method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a DATETIMETZ to its string representation
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, string representation of the DATETIMETZ
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">DateTimeTzToString(INPUT:datetime-tz):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdtzDateTimeTz</span>&nbsp;
+										DATETIME-TZ			
+							&nbsp; as datetime-tz, the datetime with timezone to be converted
+					</div>
+																		
+		<hr/>
+	<a name="DateToISOString_Method"></a>
+	<div class="section">DateToISOString method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a date to ISO 8601 format (YYYY-MM-DD)
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, ISO formatted date string (YYYY-MM-DD)
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">DateToISOString(INPUT:date):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdDate</span>&nbsp;
+										DATE			
+							&nbsp; as date, the date to be converted
+					</div>
+																		
+		<hr/>
+	<a name="DateToString_Method"></a>
+	<div class="section">DateToString method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a DATE to its string representation
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, string representation of the DATE
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">DateToString(INPUT:date):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdDate</span>&nbsp;
+										DATE			
+							&nbsp; as date, the date to be converted
+					</div>
+																		
+		<hr/>
+	<a name="DecimalToString_Method"></a>
+	<div class="section">DecimalToString method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a DECIMAL to its string representation
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, string representation of the decimal
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">DecimalToString(INPUT:decimal):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeValue</span>&nbsp;
+										DECIMAL			
+							&nbsp; as decimal, the decimal to be converted
+					</div>
+																		
+		<hr/>
+	<a name="FormatDate_Method"></a>
+	<div class="section">FormatDate method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Formats a date to a specified format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, formatted date string
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">FormatDate(INPUT:date,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdDate</span>&nbsp;
+										DATE			
+							&nbsp; as date, the date to be formatted
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcFormat</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the date format (e.g., 'YYYY-MM-DD')
+					</div>
+																		
+		<hr/>
+	<a name="FormatDateTime_Method"></a>
+	<div class="section">FormatDateTime method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Dynamically formats a datetime based on the format string passed (e.g., 'YYYY-MM-DD HH:MM:SS')
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, formatted datetime string
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">FormatDateTime(INPUT:datetime,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdtDateTime</span>&nbsp;
+										DATETIME			
+							&nbsp; as datetime, the datetime to be formatted
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcFormat</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the format for the datetime (e.g., 'YYYY-MM-DD HH:MM:SS')
+					</div>
+																		
+		<hr/>
+	<a name="FormatDateTimeTz_Method"></a>
+	<div class="section">FormatDateTimeTz method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Dynamically formats a datetime with timezone based on the format string passed (e.g., 'YYYY-MM-DDTHH:MI:SS±TZ')
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, formatted datetime string
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">FormatDateTimeTz(INPUT:datetime-tz,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdtzDateTimeTz</span>&nbsp;
+										DATETIME-TZ			
+							&nbsp; as datetime-tz, the datetime with timezone to be formatted
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcFormat</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the format for the datetime (e.g., 'YYYY-MM-DDTHH:MI:SS±TZ')
+					</div>
+																		
+		<hr/>
+	<a name="FormatInputDate_Method"></a>
+	<div class="section">FormatInputDate method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Formats a date and time (including timezone if applicable) based on the input format string and components provided
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, formatted date and time string based on the provided format
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">FormatInputDate(INPUT:character,INPUT:integer,INPUT:integer,INPUT:integer,INPUT:integer,INPUT:integer,INPUT:integer,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcFormat</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the format for the date and time (e.g., 'YYYY-MM-DD HH:MI:SS')
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipiYear</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the year component of the date
+					</div>
+																																									<div class="parameter">
+						<span class="parameter_code">ipiMonth</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the month component of the date
+					</div>
+																																																<div class="parameter">
+						<span class="parameter_code">ipiDay</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the day component of the date
+					</div>
+																																																							<div class="parameter">
+						<span class="parameter_code">ipiHour</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the hour component of the time (optional, pass ? if not used)
+					</div>
+																																																														<div class="parameter">
+						<span class="parameter_code">ipiMinute</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the minute component of the time (optional, pass ? if not used)
+					</div>
+																																																																					<div class="parameter">
+						<span class="parameter_code">ipiSecond</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the second component of the time (optional, pass ? if not used)
+					</div>
+																																																																												<div class="parameter">
+						<span class="parameter_code">ipcTZ</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the timezone string (optional, pass ? if not used)
+					</div>
+																		
+		<hr/>
+	<a name="Int64ToString_Method"></a>
+	<div class="section">Int64ToString method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts an INT64 to its string representation
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, string representation of the INT64
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">Int64ToString(INPUT:int64):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipi64Value</span>&nbsp;
+										INT64			
+							&nbsp; as int64, the INT64 to be converted
+					</div>
+																		
+		<hr/>
+	<a name="IntegerToString_Method"></a>
+	<div class="section">IntegerToString method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts an INTEGER to its string representation
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, string representation of the integer
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">IntegerToString(INPUT:integer):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipiValue</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the integer to be converted
+					</div>
+																		
+		<hr/>
+	<a name="LogicalToString_Method"></a>
+	<div class="section">LogicalToString method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a LOGICAL to its string representation (either "TRUE"/"FALSE" or "1"/"0")
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, string representation of the logical ("TRUE"/"FALSE" or "1"/"0")
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">LogicalToString(INPUT:logical,INPUT:logical):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">iplValue</span>&nbsp;
+										LOGICAL			
+							&nbsp; as logical, the logical to be converted
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">iplUseNumeric</span>&nbsp;
+										LOGICAL			
+							&nbsp; as logical, indicating whether to return "1"/"0" or "TRUE"/"FALSE"
+					</div>
+																		
+		<hr/>
+	<a name="StringToDate_Method"></a>
+	<div class="section">StringToDate method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a string to a date
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				DATE			
+	&nbsp;										date, date object
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">StringToDate(INPUT:character):DATE</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcDateString</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the string representation of the date
+					</div>
+																		
+		<hr/>
+	<a name="StringToDateTime_Method"></a>
+	<div class="section">StringToDateTime method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a string to a DATETIME
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				DATETIME			
+	&nbsp;										datetime, datetime value
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">StringToDateTime(INPUT:character):DATETIME</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcValue</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the string representation of the datetime
+					</div>
+																		
+		<hr/>
+	<a name="StringToDateTimeTz_Method"></a>
+	<div class="section">StringToDateTimeTz method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a string to a DATETIMETZ
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				DATETIME-TZ			
+	&nbsp;										datetime-tz, DATETIMETZ value
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">StringToDateTimeTz(INPUT:character):DATETIME-TZ</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcValue</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the string representation of the datetime with timezone
+					</div>
+																		
+		<hr/>
+	<a name="StringToDecimal_Method"></a>
+	<div class="section">StringToDecimal method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a string to a DECIMAL
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				DECIMAL			
+	&nbsp;										decimal, decimal value
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">StringToDecimal(INPUT:character):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcValue</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the string representation of the decimal
+					</div>
+																		
+		<hr/>
+	<a name="StringToInt64_Method"></a>
+	<div class="section">StringToInt64 method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a string to an INT64
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				INT64			
+	&nbsp;										int64, INT64 value
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">StringToInt64(INPUT:character):INT64</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcValue</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the string representation of the INT64
+					</div>
+																		
+		<hr/>
+	<a name="StringToInteger_Method"></a>
+	<div class="section">StringToInteger method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a string to an INTEGER
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				INTEGER			
+	&nbsp;										integer, integer value
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">StringToInteger(INPUT:character):INTEGER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcValue</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the string representation of the integer
+					</div>
+																		
+		<hr/>
+	<a name="StringToLogical_Method"></a>
+	<div class="section">StringToLogical method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a string to a LOGICAL
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, logical value (true or false)
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">StringToLogical(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcValue</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the string representation of the logical (e.g., "TRUE", "FALSE", "1", "0")
+					</div>
+																		
+			
+	<!-- ============ END METHOD DETAIL ========== --> 
+	<!-- ============ EVENT DETAIL ========== -->
+		<!-- ============ END EVENT DETAIL ========== -->
+	<!-- ============ PROPERTY DETAIL ========== -->
+		<!-- ============ END PROPERTY DETAIL ========== -->
+
+	<!-- ============ VARIABLE DETAIL ========== -->
+<!-- ============ END VARIABLE DETAIL ========== -->
+
+<!-- ============ BUFFER DETAIL ========== -->
+<!-- ============ END BUFFER DETAIL ========== -->
+
+<!-- ============ DATASET DETAIL ========== -->
+<!-- ============ END DATASET DETAIL ========== -->
+<!-- ============ DATA-SOURCE DETAIL ========== -->
+<!-- ============ END DATA-SOURCE DETAIL ========== -->
+<!-- ============ QUERY DETAIL ========== -->
+<!-- ============ END QUERY DETAIL ========== -->
+<!-- ============ TEMP-TABLE DETAIL ========== -->
+<!-- ============ END TEMP-TABLE DETAIL ========== -->
+	<!-- copyright content placed here will be shown in all the output pages -->
+<footer>
+		<br>
+		<div class="copyright_style">
+			<p><!-- put your copyright here --></p>
+		</div>
+</footer></body>
+</html>

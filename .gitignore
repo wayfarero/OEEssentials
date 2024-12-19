@@ -1,0 +1,8 @@
+# Files/folders to ignore
+
+# Ignore all .r files
+*.r
+protrace.*
+.propath
+results.xml
+Utils/test.p

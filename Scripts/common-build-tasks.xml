@@ -1,0 +1,140 @@
+<project name="build-tasks" xmlns:if="ant:if" xmlns:unless="ant:unless">
+
+	<dirname property="SCRIPTS.DIR" file="${ant.file.build-tasks}" />
+	<property environment="env" />
+	<property name="DLC" value="${env.DLC}" />
+	<property name="DLC.JAVA.DIR" value="${DLC}/java" />
+
+	<!-- Properties to build and package ablapp -->
+	<property name="OUTPUT.DIR" value="./Service" />
+	<property name="DIST.DIR" value="${OUTPUT.DIR}" />
+	<property name="BUILD.OUTPUT.DIR" value="${OUTPUT.DIR}/build-output" />
+
+	<!-- Properties to build and package webapp -->
+	<property name="WEBAPP" value="${ROOT}/PASOEContent" />
+	<property name="WEBAPP.OUTPUT.DIR" value="${WEBAPP}/output" />
+	<property name="WEBAPP.DIST.DIR" value="${WEBAPP.OUTPUT.DIR}/package-output" />
+	<property name="WEBAPP.BUILD.OUTPUT.DIR" value="${WEBAPP.OUTPUT.DIR}/build-output" />
+	<property name="WEBINF.SOURCE" value="${WEBAPP}/WEB-INF/openedge" />
+
+	<!-- Files needed by macrodef CompileABLCode -->
+	<property name="STARTUP-FILE-PATH" value="${ROOT}/conf/startup.pf" />
+	<property name="PROPATH-FILE-PATH" value="${ROOT}/.propath" />
+
+	<basename property="PROJECT.NAME" file="${ROOT}" />
+
+	<!-- set PCT jar and relevant taskdefs -->
+	<path id="pct.properties">
+		<pathelement path="${DLC}/pct/PCT.jar" />
+	</path>
+	
+	<path id="ant.libs">
+
+	      <!-- include all jars in the lib directory and all sub-directories -->
+	      <fileset dir="${DLC}/java">
+	        <include name="**/*.jar" />
+	      </fileset>
+	</path>
+	<taskdef resource="PCT.properties" classpathref="pct.properties" />
+	<taskdef resource="net/sf/antcontrib/antlib.xml" classpath="${DLC}/ant/lib/ant-contrib-1.0b3.jar" />
+	
+	<!-- Taskdef needed to build ABLWEBAPP -->
+	
+	<taskdef resource="com/progress/openedge/pdt/ant/ablwebapp/ablwebapps.properties" classpathref="ant.libs">
+	        
+	    </taskdef>
+
+	<!-- Fetch standardpaths.xml -->
+	<property name="standardpaths-url" value="jar:file:${DLC}/java/ant-libs/codemodel-dependencies.jar!/com/openedge/pdt/project/standardpaths.xml" />
+	<get src="${standardpaths-url}" dest="${SCRIPTS.DIR}" skipexisting="true" />
+
+	<!-- Macrdodef to empty dir -->
+	<macrodef name="emptyDir">
+		<attribute name="PATH" />
+		<sequential>
+			<delete dir="@{PATH}" />
+			<mkdir dir="@{PATH}" />
+		</sequential>
+	</macrodef>
+
+	<!-- Macrdodef to compile ABL code -->
+	<macrodef name="compileABLCode">
+		<attribute name="BUILD-OUTPUT" />
+		<attribute name="STARTUP-PARAMS" default="${STARTUP-FILE-PATH}" />
+		<attribute name="PROPATH-FILE" default="${PROPATH-FILE-PATH}" />
+		<attribute name="FORCE-COMPILE" default="true" />
+		<element name="ablfiles" />
+		<sequential>
+			<!-- Write Progress version being used for compilation -->
+			<ProgressVersion dlcHome="${DLC}" majorVersion="oeMajor" minorVersion="oeMinor" revision="oeRev" fullVersion="full" />
+			<echo message="OpenEdge Version: ${oeMajor}.${oeMinor}.${oeRev}" />
+			<PCTVersion />
+
+			<!-- convert .propath to propath xml -->
+			<xslt in="@{PROPATH-FILE}" out="${SCRIPTS.DIR}/propath.xml" style="${SCRIPTS.DIR}/dotpropath-to-pctpropath.xsl">
+				<param name="standardpaths-file" expression="standardpaths.xml" />
+			</xslt>
+
+			<!-- Read from propath.xml as ant 'path'. To access use refid, as: refid="compilation.propath" -->
+			<xmlproperty file="${SCRIPTS.DIR}/propath.xml" keepRoot="false" semanticAttributes="true" />
+			<PCTCompile destDir="@{BUILD-OUTPUT}" dlcHome="${DLC}" forceCompile="@{FORCE-COMPILE}" >
+				<!-- PROPATH -->
+				<propath refid="compilation.propath" />
+				<ablfiles />
+			</PCTCompile>
+		</sequential>
+	</macrodef>
+
+	<!-- Target for checking folder structure and setting value accordingly ({ROOT}/src/AppServer or {ROOT}/AppServer) -->
+	<target name="appserverCheck">
+		<echo message="Validating AppServer folder" />
+		<if>
+			<available file="${ROOT}/src" type="dir" />
+			<then>
+				<property name="APSV" value="${ROOT}/src" />
+			</then>
+			<else>
+				<property name="APSV" value="${ROOT}" />
+			</else>
+		</if>
+		<echo message="Setting AppServer folder to ${APSV}" />
+	</target>
+
+	<!-- Target for checking folder structure and setting value accordingly ({ROOT}/src/AppServer or {ROOT}/AppServer) -->
+	<target name="setSourceFileParent" description="Set parent of SOURCE.FILE.PATH" depends="appserverCheck">
+		<if>
+			<!-- AppServer folder -->
+			<matches pattern="^${APSV}" string="${SOURCE.FILE.PATH}" />
+			<then>
+				<property name="SOURCE.FILE.PARENT" value="${APSV}" />
+			</then>
+			<elseif>
+				<!-- src folder -->
+				<matches pattern="^${ROOT}/src" string="${SOURCE.FILE.PATH}" />
+				<then>
+					<property name="SOURCE.FILE.PARENT" value="${ROOT}/src" />
+				</then>
+			</elseif>
+			<elseif>
+				<!-- OpenEdge folder -->
+				<matches pattern="^${WEBINF.SOURCE}" string="${SOURCE.FILE.PATH}" />
+				<then>
+					<property name="SOURCE.FILE.PARENT" value="${WEBINF.SOURCE}" />
+				</then>
+			</elseif>
+			<else>
+				<property name="SOURCE.FILE.PARENT" value="${ROOT}" />
+			</else>
+		</if>
+		<echo message="Setting source file parent to ${SOURCE.FILE.PARENT}" />
+	</target>
+
+	<!-- Set the output folder based on source file ({ROOT}/output/build-output or {ROOT}/PASOEContent/output/build-output) -->
+	<target name="setSinglefileOutputDir" description="Set build path for the SOURCE.FILE.PATH">
+		<condition property="SINGLE.OUTPUT.DIR" value="${WEBAPP.BUILD.OUTPUT.DIR}" else="${BUILD.OUTPUT.DIR}">
+			<!-- Regular expression to check if SOURCE.FILE.PATH start from ${WEBINF.SOURCE} 
+	            eg: SOURCE.FILE.PATH : /projects/singleFileRun/src/AppServer/custom.p -->
+			<matches pattern="^${WEBINF.SOURCE}" string="${SOURCE.FILE.PATH}" />
+		</condition>
+	</target>
+</project>

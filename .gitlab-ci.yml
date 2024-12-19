@@ -1,0 +1,68 @@
+stages:
+  - Compile Application
+  - Test
+  - Pages
+  - Update_ReadMe
+
+Compile Project:
+  stage: Compile Application
+  tags:
+    - docker
+    - linux
+  image: "git.wayfare.ro:5050/docker/openedge:12.7-dev"
+  cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - deploy
+    when: on_success
+    policy: pull-push
+  before_script:
+    - mkdir -p $HOME/.docker
+    - echo $DOCKER_AUTH_CONFIG > $HOME/.docker/config.json
+  script:
+    - ant -f ./build.xml -DDLC=$DLC
+  except:
+    - reset_dev
+    - reset_prod
+  artifacts:
+    name: "build-job-$CI_JOB_ID"
+    paths:
+      - ./
+    when:
+
+Run unit tets:
+  stage: Test
+  tags:
+    - docker
+    - linux
+  image: "git.wayfare.ro:5050/docker/openedge:12.7-dev"
+  artifacts:
+    untracked: true
+    expire_in: 10 mins
+    paths:
+      - Results/results.xml
+    when: always
+    reports:
+      junit: Results/results.xml
+  before_script:
+    - mkdir -p $HOME/.docker
+    - echo $DOCKER_AUTH_CONFIG > $HOME/.docker/config.json
+    - apt-get update
+    - apt-get install -y gcc
+    - apt-get install -y libpcre3-dev
+    - gcc -c Lib/regm.c -fPIC -lpcre -o regm.o
+    - gcc -shared regm.o -lpcre -o regm.so
+  script:
+    - ant -f ./build.xml test_app -DDLC=$DLC
+  except:
+    - reset_dev
+    - reset_prod
+
+Pages:
+  stage: Pages
+  script:
+    - mkdir public
+    - cp -r Doc/* public
+  artifacts:
+    paths:
+      - public

@@ -1,0 +1,626 @@
+<!DOCTYPE html >
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>MemptrUtil.cls</title>
+
+<link rel="StyleSheet" href="../css/stylesheet.css"
+	type="text/css" media="all">
+
+</head>
+<body>
+
+	<!-- package name  and class name-->
+	<div class="pkg_class_name">
+		 <a href="package.html">Utils</a>: MemptrUtil CLASS 
+	</div>
+	<br>
+	<!--Class Name -->
+	<div  class="title_name">
+	MemptrUtil 
+	
+		CLASS</div>
+
+	<!-- class comment should go here -->
+	<div class="paragraph">
+	<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Main helper class to handle memptr operations
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Author(s)</span>:
+	  										Wayfare
+						<br>
+	  <span class="detail_field_title" width="50px">Notes</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Created</span>:
+	  										Mon Nov 25 10:35:24 EET 2024
+						<br>
+	</div>
+	
+				
+		
+		
+	<!-- extends section-->
+				<div  class="section">Super Class</div>
+		<div  class="paragraph">
+		<span class="code">
+						Progress.Lang.Object			
+			</span>
+	</div>
+	
+	<!-- inherits section-->
+		
+
+	<!-- CONSTRUCTOR SUMMARY SECTION -->
+		<!-- CONSTRUCTOR SUMMARY SECTION END -->
+
+	<!-- methods summary section -->
+		<div class="title_name">
+		Methods<br>
+	</div>
+	
+	
+
+	<table class="table_summary" cellspacing="0" summary="">
+
+		 
+									<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MemptrUtil.cls.html#AllocateMemory_Method"
+						title="AllocateMemory">AllocateMemory(INPUT-OUTPUT:memptr,INPUT:integer)</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MemptrUtil.cls.html#CompareMemory_Method"
+						title="CompareMemory">CompareMemory(INPUT:memptr,INPUT:memptr,INPUT:integer):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MemptrUtil.cls.html#CopyMemory_Method"
+						title="CopyMemory">CopyMemory(INPUT:memptr,INPUT-OUTPUT:memptr,INPUT:integer)</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MemptrUtil.cls.html#FreeMemory_Method"
+						title="FreeMemory">FreeMemory(INPUT-OUTPUT:memptr)</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MemptrUtil.cls.html#FromString_Method"
+						title="FromString">FromString(INPUT:character,INPUT-OUTPUT:memptr)</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MemptrUtil.cls.html#GetSize_Method"
+						title="GetSize">GetSize(INPUT:memptr):INT64</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MemptrUtil.cls.html#IsNotNull_Method"
+						title="IsNotNull">IsNotNull(INPUT:memptr):LOGICAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MemptrUtil.cls.html#IsNull_Method"
+						title="IsNull">IsNull(INPUT:memptr):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MemptrUtil.cls.html#ToString_Method"
+						title="ToString">ToString(INPUT:memptr):CHARACTER</a>
+				</div>
+			</td> 
+												</tr>
+			</table>
+	
+		<!-- method summary section end -->
+
+
+	<!-- EVENT SUMMARY SECTION -->
+		<!-- EVENT SUMMARY SECTION END -->
+
+	<!-- PROPERTY SUMMARY SECTION -->
+		<!-- PROPERTY SUMMARY SECTION END -->
+
+	
+<!-- VARIABLE SUMMARY SECTION -->
+<!-- VARIABLE SUMMARY SECTION END -->
+
+
+<!-- BUFFER SUMMARY SECTION -->
+<!-- BUFFER SUMMARY SECTION END -->
+
+<!-- DATASET SUMMARY SECTION -->
+<!-- DATASET SUMMARY SECTION END -->
+
+
+<!-- DATA-SOURCE SUMMARY SECTION -->
+<!-- DATA-SOURCE SUMMARY SECTION END -->
+
+<!-- QUERY SUMMARY SECTION -->
+<!-- QUERY SUMMARY SECTION END -->
+
+<!-- TEMP-TABLE SUMMARY SECTION -->
+<!-- TEMP-TABLE SUMMARY SECTION END -->
+	
+	<!-- ============ CONSTRUCTOR DETAIL ========== --> 
+		
+	<!-- ============ END CONSTRUCTOR DETAIL ========== --> 
+	<!-- ============ METHOD DETAIL ========== -->
+	
+		
+	<div class="title_name">
+		Method Detail<br>
+	</div>
+	 
+		<hr/>
+	<a name="AllocateMemory_Method"></a>
+	<div class="section">AllocateMemory method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Allocates memory for a memptr with the specified size
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">AllocateMemory(INPUT-OUTPUT:memptr,INPUT:integer)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">iopmptrPointer</span>&nbsp;
+										MEMPTR			
+							&nbsp; as memptr, the memptr to allocate memory for
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipiSize</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the size in bytes to allocate
+					</div>
+																		
+		<hr/>
+	<a name="CompareMemory_Method"></a>
+	<div class="section">CompareMemory method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Compares two memptr blocks to check if their content is identical
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if the content is identical, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">CompareMemory(INPUT:memptr,INPUT:memptr,INPUT:integer):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipmptrPointer1</span>&nbsp;
+										MEMPTR			
+							&nbsp; as memptr, the first memptr
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipmptrPointer2</span>&nbsp;
+										MEMPTR			
+							&nbsp; as memptr, the second memptr
+					</div>
+																																									<div class="parameter">
+						<span class="parameter_code">ipiSize</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the number of bytes to compare
+					</div>
+																		
+		<hr/>
+	<a name="CopyMemory_Method"></a>
+	<div class="section">CopyMemory method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Copies data from one memptr to another
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">CopyMemory(INPUT:memptr,INPUT-OUTPUT:memptr,INPUT:integer)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipmptrSource</span>&nbsp;
+										MEMPTR			
+							&nbsp; as memptr, the source memptr
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">iopmptrTarget</span>&nbsp;
+										MEMPTR			
+							&nbsp; as memptr, the target memptr
+					</div>
+																																									<div class="parameter">
+						<span class="parameter_code">ipiSize</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the number of bytes to copy
+					</div>
+																		
+		<hr/>
+	<a name="FreeMemory_Method"></a>
+	<div class="section">FreeMemory method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Frees the allocated memory for a memptr
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">FreeMemory(INPUT-OUTPUT:memptr)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">iopmptrPointer</span>&nbsp;
+										MEMPTR			
+							&nbsp; as memptr, the memptr to free memory for
+					</div>
+																		
+		<hr/>
+	<a name="FromString_Method"></a>
+	<div class="section">FromString method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts a string into a memptr
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">FromString(INPUT:character,INPUT-OUTPUT:memptr)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcData</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the string to convert
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">iopmptrPointer</span>&nbsp;
+										MEMPTR			
+							&nbsp; as memptr, the memptr to populate with string data
+					</div>
+																		
+		<hr/>
+	<a name="GetSize_Method"></a>
+	<div class="section">GetSize method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Retrieves the size of the memory block pointed to by the memptr
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				INT64			
+	&nbsp;										int64, the size of the memory block in bytes
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetSize(INPUT:memptr):INT64</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipmptrPointer</span>&nbsp;
+										MEMPTR			
+							&nbsp; as memptr, the memptr to check
+					</div>
+																		
+		<hr/>
+	<a name="IsNotNull_Method"></a>
+	<div class="section">IsNotNull method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Determines if the given memptr is not null (allocated and non-zero size)
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if not null, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">IsNotNull(INPUT:memptr):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipmptrPointer</span>&nbsp;
+										MEMPTR			
+							&nbsp; as memptr, the memptr to check
+					</div>
+																		
+		<hr/>
+	<a name="IsNull_Method"></a>
+	<div class="section">IsNull method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Determines if the given memptr is null (unallocated or zero size)
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if null, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">IsNull(INPUT:memptr):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipmptrPointer</span>&nbsp;
+										MEMPTR			
+							&nbsp; as memptr, the memptr to check
+					</div>
+																		
+		<hr/>
+	<a name="ToString_Method"></a>
+	<div class="section">ToString method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Converts the contents of a memptr to a string
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the string representation of the memptr contents
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ToString(INPUT:memptr):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipmptrPointer</span>&nbsp;
+										MEMPTR			
+							&nbsp; as memptr, the memptr to convert
+					</div>
+																		
+			
+	<!-- ============ END METHOD DETAIL ========== --> 
+	<!-- ============ EVENT DETAIL ========== -->
+		<!-- ============ END EVENT DETAIL ========== -->
+	<!-- ============ PROPERTY DETAIL ========== -->
+		<!-- ============ END PROPERTY DETAIL ========== -->
+
+	<!-- ============ VARIABLE DETAIL ========== -->
+<!-- ============ END VARIABLE DETAIL ========== -->
+
+<!-- ============ BUFFER DETAIL ========== -->
+<!-- ============ END BUFFER DETAIL ========== -->
+
+<!-- ============ DATASET DETAIL ========== -->
+<!-- ============ END DATASET DETAIL ========== -->
+<!-- ============ DATA-SOURCE DETAIL ========== -->
+<!-- ============ END DATA-SOURCE DETAIL ========== -->
+<!-- ============ QUERY DETAIL ========== -->
+<!-- ============ END QUERY DETAIL ========== -->
+<!-- ============ TEMP-TABLE DETAIL ========== -->
+<!-- ============ END TEMP-TABLE DETAIL ========== -->
+	<!-- copyright content placed here will be shown in all the output pages -->
+<footer>
+		<br>
+		<div class="copyright_style">
+			<p><!-- put your copyright here --></p>
+		</div>
+</footer></body>
+</html>

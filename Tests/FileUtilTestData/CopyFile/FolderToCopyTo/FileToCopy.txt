@@ -1,0 +1,2 @@
+hello, 
+i am the file that will be copied. 

@@ -1,0 +1,812 @@
+<!DOCTYPE html >
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>ValidatorUtil.cls</title>
+
+<link rel="StyleSheet" href="../css/stylesheet.css"
+	type="text/css" media="all">
+
+</head>
+<body>
+
+	<!-- package name  and class name-->
+	<div class="pkg_class_name">
+		 <a href="package.html">Utils</a>: ValidatorUtil CLASS 
+	</div>
+	<br>
+	<!--Class Name -->
+	<div  class="title_name">
+	ValidatorUtil 
+	
+		CLASS</div>
+
+	<!-- class comment should go here -->
+	<div class="paragraph">
+	<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Main helper class for validation
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Author(s)</span>:
+	  										Wayfare
+						<br>
+	  <span class="detail_field_title" width="50px">Notes</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Created</span>:
+	  										Wed Nov 06 11:04:44 EET 2024
+						<br>
+	</div>
+	
+				
+		
+		
+	<!-- extends section-->
+				<div  class="section">Super Class</div>
+		<div  class="paragraph">
+		<span class="code">
+						Progress.Lang.Object			
+			</span>
+	</div>
+	
+	<!-- inherits section-->
+		
+
+	<!-- CONSTRUCTOR SUMMARY SECTION -->
+		<!-- CONSTRUCTOR SUMMARY SECTION END -->
+
+	<!-- methods summary section -->
+		<div class="title_name">
+		Methods<br>
+	</div>
+	
+	
+
+	<table class="table_summary" cellspacing="0" summary="">
+
+		 
+									<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#CalculateLuhnChecksum_Method"
+						title="CalculateLuhnChecksum">CalculateLuhnChecksum(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#MatchPattern_Method"
+						title="MatchPattern">MatchPattern(INPUT:character,INPUT:character,INPUT:character,INPUT:logical):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#ValidateCreditCardNumber_Method"
+						title="ValidateCreditCardNumber">ValidateCreditCardNumber(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#ValidateCreditCardNumberUnixLibrary_Method"
+						title="ValidateCreditCardNumberUnixLibrary">ValidateCreditCardNumberUnixLibrary(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#ValidateEmailAddress_Method"
+						title="ValidateEmailAddress">ValidateEmailAddress(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#ValidateEmailAddressUnixLibrary_Method"
+						title="ValidateEmailAddressUnixLibrary">ValidateEmailAddressUnixLibrary(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#ValidateIPv4Address_Method"
+						title="ValidateIPv4Address">ValidateIPv4Address(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#ValidateIPv6Address_Method"
+						title="ValidateIPv6Address">ValidateIPv6Address(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#ValidateIPv6AddressUnixLibrary_Method"
+						title="ValidateIPv6AddressUnixLibrary">ValidateIPv6AddressUnixLibrary(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#ValidatePhoneNumber_Method"
+						title="ValidatePhoneNumber">ValidatePhoneNumber(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#ValidatePhoneNumberUnixLibrary_Method"
+						title="ValidatePhoneNumberUnixLibrary">ValidatePhoneNumberUnixLibrary(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#ValidateURL_Method"
+						title="ValidateURL">ValidateURL(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ValidatorUtil.cls.html#ValidateURLUnixLibrary_Method"
+						title="ValidateURLUnixLibrary">ValidateURLUnixLibrary(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+												</tr>
+			</table>
+	
+		<!-- method summary section end -->
+
+
+	<!-- EVENT SUMMARY SECTION -->
+		<!-- EVENT SUMMARY SECTION END -->
+
+	<!-- PROPERTY SUMMARY SECTION -->
+		<!-- PROPERTY SUMMARY SECTION END -->
+
+	
+<!-- VARIABLE SUMMARY SECTION -->
+<!-- VARIABLE SUMMARY SECTION END -->
+
+
+<!-- BUFFER SUMMARY SECTION -->
+<!-- BUFFER SUMMARY SECTION END -->
+
+<!-- DATASET SUMMARY SECTION -->
+<!-- DATASET SUMMARY SECTION END -->
+
+
+<!-- DATA-SOURCE SUMMARY SECTION -->
+<!-- DATA-SOURCE SUMMARY SECTION END -->
+
+<!-- QUERY SUMMARY SECTION -->
+<!-- QUERY SUMMARY SECTION END -->
+
+<!-- TEMP-TABLE SUMMARY SECTION -->
+<!-- TEMP-TABLE SUMMARY SECTION END -->
+	
+	<!-- ============ CONSTRUCTOR DETAIL ========== --> 
+		
+	<!-- ============ END CONSTRUCTOR DETAIL ========== --> 
+	<!-- ============ METHOD DETAIL ========== -->
+	
+		
+	<div class="title_name">
+		Method Detail<br>
+	</div>
+	 
+		<hr/>
+	<a name="CalculateLuhnChecksum_Method"></a>
+	<div class="section">CalculateLuhnChecksum method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculates if a credit card number is valid based on the Luhn algorithm
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										This method is used internally by the credit card validation methods
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if the number is valid per Luhn algorithm, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PRIVATE &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">CalculateLuhnChecksum(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcCardNumber</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the credit card number to validate
+					</div>
+																		
+		<hr/>
+	<a name="MatchPattern_Method"></a>
+	<div class="section">MatchPattern method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  				<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  				<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PRIVATE &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">MatchPattern(INPUT:character,INPUT:character,INPUT:character,INPUT:logical):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+														<div class="parameter">
+					<span class="parameter_code">ipcPattern</span>&nbsp;
+										CHARACTER			
+					</div>
+															<div class="parameter">
+					<span class="parameter_code">ipcLinuxPattern</span>&nbsp;
+										CHARACTER			
+					</div>
+															<div class="parameter">
+					<span class="parameter_code">ipcTestString</span>&nbsp;
+										CHARACTER			
+					</div>
+															<div class="parameter">
+					<span class="parameter_code">useLib</span>&nbsp;
+										LOGICAL			
+					</div>
+								
+		<hr/>
+	<a name="ValidateCreditCardNumber_Method"></a>
+	<div class="section">ValidateCreditCardNumber method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Validates a credit card number using the Luhn algorithm
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										On UNIX, this method uses the 'perl' command for regex matching
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if valid, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ValidateCreditCardNumber(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcCardNumber</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the credit card number to validate
+					</div>
+																		
+		<hr/>
+	<a name="ValidateCreditCardNumberUnixLibrary_Method"></a>
+	<div class="section">ValidateCreditCardNumberUnixLibrary method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Validates a credit card number using the Luhn algorithm
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										On UNIX, this method uses the C library 'regm.so' for regex matching
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if valid, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ValidateCreditCardNumberUnixLibrary(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcCardNumber</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the credit card number to validate
+					</div>
+																		
+		<hr/>
+	<a name="ValidateEmailAddress_Method"></a>
+	<div class="section">ValidateEmailAddress method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Validates if an email address is in a standard format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										On UNIX, this method uses the 'perl' command for regex matching
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if valid, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ValidateEmailAddress(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcEmail</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the email address to validate
+					</div>
+																		
+		<hr/>
+	<a name="ValidateEmailAddressUnixLibrary_Method"></a>
+	<div class="section">ValidateEmailAddressUnixLibrary method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Validates if an email address is in a standard format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										On UNIX, this method uses the C library 'regm.so' for regex matching
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if valid, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ValidateEmailAddressUnixLibrary(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcEmail</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the email address to validate
+					</div>
+																		
+		<hr/>
+	<a name="ValidateIPv4Address_Method"></a>
+	<div class="section">ValidateIPv4Address method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Validates if an IP address is in a valid IPv4 format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										On UNIX, this method uses the 'perl' command for regex matching
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if valid, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ValidateIPv4Address(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcIPAddress</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the IP address to validate
+					</div>
+																		
+		<hr/>
+	<a name="ValidateIPv6Address_Method"></a>
+	<div class="section">ValidateIPv6Address method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Validates if an IP address is in a valid IPv6 format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Accepts standard and shorthand IPv6 notations. On UNIX, this method uses the 'perl' command for regex matching
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if valid, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ValidateIPv6Address(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcIPAddress</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the IPv6 address to validate
+					</div>
+																		
+		<hr/>
+	<a name="ValidateIPv6AddressUnixLibrary_Method"></a>
+	<div class="section">ValidateIPv6AddressUnixLibrary method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Validates if an IP address is in a valid IPv6 format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Accepts standard and shorthand IPv6 notations. On UNIX, this method uses the C library 'regm.so' for regex matching
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if valid, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ValidateIPv6AddressUnixLibrary(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcIPAddress</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the IPv6 address to validate
+					</div>
+																		
+		<hr/>
+	<a name="ValidatePhoneNumber_Method"></a>
+	<div class="section">ValidatePhoneNumber method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Validates if a phone number is in a standard format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										On UNIX, this method uses the 'perl' command for regex matching
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if valid, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ValidatePhoneNumber(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcPhoneNumber</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the phone number to validate
+					</div>
+																		
+		<hr/>
+	<a name="ValidatePhoneNumberUnixLibrary_Method"></a>
+	<div class="section">ValidatePhoneNumberUnixLibrary method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Validates if a phone number is in a standard format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										On UNIX, this method uses the C library 'regm.so' for regex matching
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if valid, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ValidatePhoneNumberUnixLibrary(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcPhoneNumber</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the phone number to validate
+					</div>
+																		
+		<hr/>
+	<a name="ValidateURL_Method"></a>
+	<div class="section">ValidateURL method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Validates if a URL is in a standard format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										On UNIX, this method uses the 'perl' command for regex matching
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if valid, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ValidateURL(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcURL</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the URL to validate
+					</div>
+																		
+		<hr/>
+	<a name="ValidateURLUnixLibrary_Method"></a>
+	<div class="section">ValidateURLUnixLibrary method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Validates if a URL is in a standard format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										On UNIX, this method uses the C library 'regm.so' for regex matching
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, TRUE if valid, FALSE otherwise
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">ValidateURLUnixLibrary(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcURL</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the URL to validate
+					</div>
+																		
+			
+	<!-- ============ END METHOD DETAIL ========== --> 
+	<!-- ============ EVENT DETAIL ========== -->
+		<!-- ============ END EVENT DETAIL ========== -->
+	<!-- ============ PROPERTY DETAIL ========== -->
+		<!-- ============ END PROPERTY DETAIL ========== -->
+
+	<!-- ============ VARIABLE DETAIL ========== -->
+<!-- ============ END VARIABLE DETAIL ========== -->
+
+<!-- ============ BUFFER DETAIL ========== -->
+<!-- ============ END BUFFER DETAIL ========== -->
+
+<!-- ============ DATASET DETAIL ========== -->
+<!-- ============ END DATASET DETAIL ========== -->
+<!-- ============ DATA-SOURCE DETAIL ========== -->
+<!-- ============ END DATA-SOURCE DETAIL ========== -->
+<!-- ============ QUERY DETAIL ========== -->
+<!-- ============ END QUERY DETAIL ========== -->
+<!-- ============ TEMP-TABLE DETAIL ========== -->
+<!-- ============ END TEMP-TABLE DETAIL ========== -->
+	<!-- copyright content placed here will be shown in all the output pages -->
+<footer>
+		<br>
+		<div class="copyright_style">
+			<p><!-- put your copyright here --></p>
+		</div>
+</footer></body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html >
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>SessionUtil.cls</title>
+
+<link rel="StyleSheet" href="../css/stylesheet.css"
+	type="text/css" media="all">
+
+</head>
+<body>
+
+	<!-- package name  and class name-->
+	<div class="pkg_class_name">
+		 <a href="package.html">Utils</a>: SessionUtil CLASS 
+	</div>
+	<br>
+	<!--Class Name -->
+	<div  class="title_name">
+	SessionUtil 
+	
+		CLASS</div>
+
+	<!-- class comment should go here -->
+	<div class="paragraph">
+	<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Main helper class to handle session operations
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Author(s)</span>:
+	  										Wayfare
+						<br>
+	  <span class="detail_field_title" width="50px">Notes</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Created</span>:
+	  										Tue Nov 05 15:39:22 EET 2024
+						<br>
+	</div>
+	
+				
+		
+		
+	<!-- extends section-->
+				<div  class="section">Super Class</div>
+		<div  class="paragraph">
+		<span class="code">
+						Progress.Lang.Object			
+			</span>
+	</div>
+	
+	<!-- inherits section-->
+		
+
+	<!-- CONSTRUCTOR SUMMARY SECTION -->
+		<!-- CONSTRUCTOR SUMMARY SECTION END -->
+
+	<!-- methods summary section -->
+		<div class="title_name">
+		Methods<br>
+	</div>
+	
+	
+
+	<table class="table_summary" cellspacing="0" summary="">
+
+		 
+									<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="SessionUtil.cls.html#GetDateFormat_Method"
+						title="GetDateFormat">GetDateFormat():CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="SessionUtil.cls.html#GetNumericDecimalPoint_Method"
+						title="GetNumericDecimalPoint">GetNumericDecimalPoint():CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="SessionUtil.cls.html#GetNumericFormat_Method"
+						title="GetNumericFormat">GetNumericFormat():CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="SessionUtil.cls.html#GetNumericSeparator_Method"
+						title="GetNumericSeparator">GetNumericSeparator():CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="SessionUtil.cls.html#GetStartupParameters_Method"
+						title="GetStartupParameters">GetStartupParameters():CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="SessionUtil.cls.html#SetDateFormat_Method"
+						title="SetDateFormat">SetDateFormat(INPUT:character)</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="SessionUtil.cls.html#SetNumericFormat_Method"
+						title="SetNumericFormat">SetNumericFormat(INPUT:character)</a>
+				</div>
+			</td> 
+												</tr>
+			</table>
+	
+		<!-- method summary section end -->
+
+
+	<!-- EVENT SUMMARY SECTION -->
+		<!-- EVENT SUMMARY SECTION END -->
+
+	<!-- PROPERTY SUMMARY SECTION -->
+		<!-- PROPERTY SUMMARY SECTION END -->
+
+	
+<!-- VARIABLE SUMMARY SECTION -->
+<!-- VARIABLE SUMMARY SECTION END -->
+
+
+<!-- BUFFER SUMMARY SECTION -->
+<!-- BUFFER SUMMARY SECTION END -->
+
+<!-- DATASET SUMMARY SECTION -->
+<!-- DATASET SUMMARY SECTION END -->
+
+
+<!-- DATA-SOURCE SUMMARY SECTION -->
+<!-- DATA-SOURCE SUMMARY SECTION END -->
+
+<!-- QUERY SUMMARY SECTION -->
+<!-- QUERY SUMMARY SECTION END -->
+
+<!-- TEMP-TABLE SUMMARY SECTION -->
+<!-- TEMP-TABLE SUMMARY SECTION END -->
+	
+	<!-- ============ CONSTRUCTOR DETAIL ========== --> 
+		
+	<!-- ============ END CONSTRUCTOR DETAIL ========== --> 
+	<!-- ============ METHOD DETAIL ========== -->
+	
+		
+	<div class="title_name">
+		Method Detail<br>
+	</div>
+	 
+		<hr/>
+	<a name="GetDateFormat_Method"></a>
+	<div class="section">GetDateFormat method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Retrieves the current session date format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										The format represents how dates are displayed, e.g., "mdy"
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the current date format of the session
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetDateFormat():CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			
+		<hr/>
+	<a name="GetNumericDecimalPoint_Method"></a>
+	<div class="section">GetNumericDecimalPoint method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Retrieves the current numeric decimal point
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the current numeric decimal point of the session
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetNumericDecimalPoint():CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			
+		<hr/>
+	<a name="GetNumericFormat_Method"></a>
+	<div class="section">GetNumericFormat method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Retrieves the current numeric format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the current numeric format of the session
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetNumericFormat():CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			
+		<hr/>
+	<a name="GetNumericSeparator_Method"></a>
+	<div class="section">GetNumericSeparator method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Retrieves the current numeric separator
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the current numeric separator of the session
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetNumericSeparator():CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			
+		<hr/>
+	<a name="GetStartupParameters_Method"></a>
+	<div class="section">GetStartupParameters method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Retrieves session startup parameters as a single character string
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the startup parameters of the session
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetStartupParameters():CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			
+		<hr/>
+	<a name="SetDateFormat_Method"></a>
+	<div class="section">SetDateFormat method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Sets the session date format to a specified format
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Accepted formats are: mdy, myd, dmy, dym, ymd, ydm
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">SetDateFormat(INPUT:character)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcDateFormat</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the desired date format for the session
+					</div>
+																		
+		<hr/>
+	<a name="SetNumericFormat_Method"></a>
+	<div class="section">SetNumericFormat method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Sets the numeric format in the session
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">SetNumericFormat(INPUT:character)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcNumericFormat</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the desired numeric format for the session
+					</div>
+																		
+			
+	<!-- ============ END METHOD DETAIL ========== --> 
+	<!-- ============ EVENT DETAIL ========== -->
+		<!-- ============ END EVENT DETAIL ========== -->
+	<!-- ============ PROPERTY DETAIL ========== -->
+		<!-- ============ END PROPERTY DETAIL ========== -->
+
+	<!-- ============ VARIABLE DETAIL ========== -->
+<!-- ============ END VARIABLE DETAIL ========== -->
+
+<!-- ============ BUFFER DETAIL ========== -->
+<!-- ============ END BUFFER DETAIL ========== -->
+
+<!-- ============ DATASET DETAIL ========== -->
+<!-- ============ END DATASET DETAIL ========== -->
+<!-- ============ DATA-SOURCE DETAIL ========== -->
+<!-- ============ END DATA-SOURCE DETAIL ========== -->
+<!-- ============ QUERY DETAIL ========== -->
+<!-- ============ END QUERY DETAIL ========== -->
+<!-- ============ TEMP-TABLE DETAIL ========== -->
+<!-- ============ END TEMP-TABLE DETAIL ========== -->
+	<!-- copyright content placed here will be shown in all the output pages -->
+<footer>
+		<br>
+		<div class="copyright_style">
+			<p><!-- put your copyright here --></p>
+		</div>
+</footer></body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<containers>
+	<container id="com.openedge.pdt.text.GUI_LIBRARIES" env="gui" name="Standard GUI Libraries" system="true" scan="true" proconly="true" ignoreonnetwork="true">
+		<propathentry path="@{DLC}/gui/" kind="dir"/>
+		<propathentry path="@{DLC}/gui/adecomm.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adecomp.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adedict.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adeedit.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adeicon.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adeshar.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adeuib.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adeweb.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adexml.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/dataadmin.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/prodict.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/protools.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/OpenEdge.Core.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/OpenEdge.BusinessLogic.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/netlib/OpenEdge.Net.pl" kind="lib"/>
+	</container>
+	<container id="com.openedge.pdt.text.TTY_LIBRARIES" env="tty" name="Standard TTY Libraries" system="true" scan="true" proconly="true" ignoreonnetwork="true">
+		<propathentry path="@{DLC}/tty" kind="dir"/>
+		<propathentry path="@{DLC}/tty/adecomm.pl" kind="lib"/>
+		<propathentry path="@{DLC}/tty/adecomp.pl" kind="lib"/>
+		<propathentry path="@{DLC}/tty/adeedit.pl" kind="lib"/>
+		<propathentry path="@{DLC}/tty/adeshar.pl" kind="lib"/>
+		<propathentry path="@{DLC}/tty/dataadmin.pl" kind="lib"/>
+		<propathentry path="@{DLC}/tty/prodict.pl" kind="lib"/>
+		<propathentry path="@{DLC}/tty/adecomm.pl" kind="lib"/>
+		<propathentry path="@{DLC}/tty/OpenEdge.Core.pl" kind="lib"/>
+		<propathentry path="@{DLC}/tty/OpenEdge.BusinessLogic.pl" kind="lib"/>
+		<propathentry path="@{DLC}/tty/netlib/OpenEdge.Net.pl" kind="lib"/>		
+	</container>
+	<container id="com.openedge.pdt.text.DLC_PATHS" env="all" name="Installation Paths" system="false" scan="false" proconly="true" ignoreonnetwork="true">
+		<propathentry path="@{DLC}" kind="dir"/>
+		<propathentry path="@{DLC}/bin" kind="dir"/>
+	</container>
+	<container id="com.openedge.pdt.text.WEB_LIBRARIES" env="web" name="Standard WebSpeed Paths" system="false" scan="true" proconly="true" ignoreonnetwork="true">
+		<propathentry path="@{DLC}/tty" kind="dir"/>
+	</container>
+	<container id="com.openedge.pdt.text.DYNAMICS_LIBRARIES" env="gui" name="Standard Progress Dynamics Libraries" system="false" scan="true" proconly="true" ignoreonnetwork="true">
+		<propathentry path="@{DLC}/gui/dynamics" kind="dir"/>
+		<propathentry path="@{DLC}/src/dynamics" kind="dir"/>
+		<propathentry path="@{DLC}/src/dynamics/af/sup2" kind="dir"/>
+		<propathentry path="@{DLC}/gui" kind="dir"/>
+		<propathentry path="@{DLC}/gui/adecomm.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adeicon.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adeshar.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adeuib.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/protools.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adeedit.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adedict.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/prodict.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adecomp.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adedesk.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adexml.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/adeweb.pl" kind="lib"/>
+		<propathentry path="@{DLC}/gui/dataadmin.pl" kind="lib"/>
+		<propathentry path="@{DLC}" kind="dir"/>
+		<propathentry path="@{DLC}/src" kind="dir"/>
+	</container>
+	<container id="com.openedge.pdt.text.SRC_PATHS" env="all" name="Standard Source Paths" system="false" scan="true" proconly="true" ignoreonnetwork="true">
+		<propathentry path="@{DLC}/src" kind="dir"/>
+	</container>
+	<container id="com.openedge.pdt.text.ADETRAN" env="gui" name="Translation Manager Paths" system="false" scan="true" proconly="true" ignoreonnetwork="true">
+		<propathentry path="@{DLC}/gui/adetran.pl" kind="lib"/>
+	</container>
+	<container id="com.openedge.pdt.text.ADERES" env="gui" name="Graphical Results Procedure Library" system="false" scan="true" proconly="true" ignoreonnetwork="true">
+		<propathentry path="@{DLC}/gui/aderes.pl" kind="lib"/>
+	</container>
+</containers>

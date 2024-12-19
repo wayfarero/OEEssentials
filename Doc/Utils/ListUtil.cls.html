@@ -1,0 +1,1901 @@
+<!DOCTYPE html >
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>ListUtil.cls</title>
+
+<link rel="StyleSheet" href="../css/stylesheet.css"
+	type="text/css" media="all">
+
+</head>
+<body>
+
+	<!-- package name  and class name-->
+	<div class="pkg_class_name">
+		 <a href="package.html">Utils</a>: ListUtil CLASS 
+	</div>
+	<br>
+	<!--Class Name -->
+	<div  class="title_name">
+	ListUtil 
+	
+		CLASS</div>
+
+	<!-- class comment should go here -->
+	<div class="paragraph">
+	<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Main helper class to handle List operations
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Author(s)</span>:
+	  										Wayfare
+						<br>
+	  <span class="detail_field_title" width="50px">Notes</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Created</span>:
+	  										Tue Oct 22 15:53:05 EEST 2024
+						<br>
+	</div>
+	
+				
+		
+		
+	<!-- extends section-->
+				<div  class="section">Super Class</div>
+		<div  class="paragraph">
+		<span class="code">
+						Progress.Lang.Object			
+			</span>
+	</div>
+	
+	<!-- inherits section-->
+		
+
+	<!-- CONSTRUCTOR SUMMARY SECTION -->
+		<!-- CONSTRUCTOR SUMMARY SECTION END -->
+
+	<!-- methods summary section -->
+		<div class="title_name">
+		Methods<br>
+	</div>
+	
+	
+
+	<table class="table_summary" cellspacing="0" summary="">
+
+		 
+									<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#AddElement_Method"
+						title="AddElement">AddElement(INPUT:character,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#AddElement_Method"
+						title="AddElement">AddElement(INPUT:character,INPUT:character,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#AddElement_Method"
+						title="AddElement">AddElement(INPUT:List,INPUT:string)</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#AddElementByPosition_Method"
+						title="AddElementByPosition">AddElementByPosition(INPUT:character,INPUT:character,INPUT:character,INPUT:integer):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#AddElementByPosition_Method"
+						title="AddElementByPosition">AddElementByPosition(INPUT:character,INPUT:character,INPUT:integer):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#AddElementByPosition_Method"
+						title="AddElementByPosition">AddElementByPosition(INPUT:List,INPUT:string,INPUT:integer)</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#GetFirstElement_Method"
+						title="GetFirstElement">GetFirstElement(INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#GetFirstElement_Method"
+						title="GetFirstElement">GetFirstElement(INPUT:character,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#GetFirstElement_Method"
+						title="GetFirstElement">GetFirstElement(INPUT:List):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#GetLastElement_Method"
+						title="GetLastElement">GetLastElement(INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#GetLastElement_Method"
+						title="GetLastElement">GetLastElement(INPUT:character,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#GetLastElement_Method"
+						title="GetLastElement">GetLastElement(INPUT:List):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#HasDuplicates_Method"
+						title="HasDuplicates">HasDuplicates(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#HasDuplicates_Method"
+						title="HasDuplicates">HasDuplicates(INPUT:character,INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#HasDuplicates_Method"
+						title="HasDuplicates">HasDuplicates(INPUT:List):LOGICAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#HasElement_Method"
+						title="HasElement">HasElement(INPUT:character,INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#HasElement_Method"
+						title="HasElement">HasElement(INPUT:List,INPUT:string):LOGICAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#HasEmptyElements_Method"
+						title="HasEmptyElements">HasEmptyElements(INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#HasEmptyElements_Method"
+						title="HasEmptyElements">HasEmptyElements(INPUT:character,INPUT:character):LOGICAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#HasEmptyElements_Method"
+						title="HasEmptyElements">HasEmptyElements(INPUT:List):LOGICAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#RemoveElement_Method"
+						title="RemoveElement">RemoveElement(INPUT:character,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#RemoveElement_Method"
+						title="RemoveElement">RemoveElement(INPUT:character,INPUT:character,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#RemoveElement_Method"
+						title="RemoveElement">RemoveElement(INPUT:List,INPUT:string)</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#RemoveElementByPosition_Method"
+						title="RemoveElementByPosition">RemoveElementByPosition(INPUT:character,INPUT:integer):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#RemoveElementByPosition_Method"
+						title="RemoveElementByPosition">RemoveElementByPosition(INPUT:character,INPUT:integer,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#RemoveElementByPosition_Method"
+						title="RemoveElementByPosition">RemoveElementByPosition(INPUT:List,INPUT:integer)</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#RemoveEmptyElements_Method"
+						title="RemoveEmptyElements">RemoveEmptyElements(INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#RemoveEmptyElements_Method"
+						title="RemoveEmptyElements">RemoveEmptyElements(INPUT:character,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#RemoveEmptyElements_Method"
+						title="RemoveEmptyElements">RemoveEmptyElements(INPUT:List)</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#SortList_Method"
+						title="SortList">SortList(INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#SortList_Method"
+						title="SortList">SortList(INPUT:character,INPUT:character):CHARACTER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="ListUtil.cls.html#SortList_Method"
+						title="SortList">SortList(INPUT:List)</a>
+				</div>
+			</td> 
+								</tr>
+								</table>
+	
+		<!-- method summary section end -->
+
+
+	<!-- EVENT SUMMARY SECTION -->
+		<!-- EVENT SUMMARY SECTION END -->
+
+	<!-- PROPERTY SUMMARY SECTION -->
+		<!-- PROPERTY SUMMARY SECTION END -->
+
+	
+<!-- VARIABLE SUMMARY SECTION -->
+<!-- VARIABLE SUMMARY SECTION END -->
+
+
+<!-- BUFFER SUMMARY SECTION -->
+<!-- BUFFER SUMMARY SECTION END -->
+
+<!-- DATASET SUMMARY SECTION -->
+<!-- DATASET SUMMARY SECTION END -->
+
+
+<!-- DATA-SOURCE SUMMARY SECTION -->
+<!-- DATA-SOURCE SUMMARY SECTION END -->
+
+<!-- QUERY SUMMARY SECTION -->
+<!-- QUERY SUMMARY SECTION END -->
+
+<!-- TEMP-TABLE SUMMARY SECTION -->
+<!-- TEMP-TABLE SUMMARY SECTION END -->
+	
+	<!-- ============ CONSTRUCTOR DETAIL ========== --> 
+		
+	<!-- ============ END CONSTRUCTOR DETAIL ========== --> 
+	<!-- ============ METHOD DETAIL ========== -->
+	
+		
+	<div class="title_name">
+		Method Detail<br>
+	</div>
+	 
+		<hr/>
+	<a name="AddElement_Method"></a>
+	<div class="section">AddElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Adds a new element at the end of the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Default separator is ","
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the list with the added element
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">AddElement(INPUT:character,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to add the element to
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcElement</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the element to add
+					</div>
+																		
+		<hr/>
+	<a name="AddElement_Method"></a>
+	<div class="section">AddElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Adds a new element at the end of the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the list with the added element
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">AddElement(INPUT:character,INPUT:character,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to add the element to
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcElement</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the element to add
+					</div>
+																																									<div class="parameter">
+						<span class="parameter_code">ipcSeparator</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list separator
+					</div>
+																		
+		<hr/>
+	<a name="AddElement_Method"></a>
+	<div class="section">AddElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Adds a new element at the end of the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">AddElement(INPUT:List,INPUT:string)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipltList</span>&nbsp;
+										OpenEdge.Core.Collections.List			
+							&nbsp; as List, the list to add the element to
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipsElement</span>&nbsp;
+										OpenEdge.Core.String			
+							&nbsp; as string, the element to add
+					</div>
+																		
+		<hr/>
+	<a name="AddElementByPosition_Method"></a>
+	<div class="section">AddElementByPosition method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Adds a new list element at the specified position
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the list with the added element
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">AddElementByPosition(INPUT:character,INPUT:character,INPUT:character,INPUT:integer):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to add the element to
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcElement</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the element to add
+					</div>
+																																									<div class="parameter">
+						<span class="parameter_code">ipcSeparator</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list separator
+					</div>
+																																																<div class="parameter">
+						<span class="parameter_code">ipiPosition</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the position to add the element to
+					</div>
+																		
+		<hr/>
+	<a name="AddElementByPosition_Method"></a>
+	<div class="section">AddElementByPosition method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Adds a new list element at the specified position
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Default separator is ","
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the list with the added element
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">AddElementByPosition(INPUT:character,INPUT:character,INPUT:integer):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to add the element to
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcElement</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the element to add
+					</div>
+																																									<div class="parameter">
+						<span class="parameter_code">ipiPosition</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the position to add the element to
+					</div>
+																		
+		<hr/>
+	<a name="AddElementByPosition_Method"></a>
+	<div class="section">AddElementByPosition method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Adds a new list element at the specified position
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">AddElementByPosition(INPUT:List,INPUT:string,INPUT:integer)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipltList</span>&nbsp;
+										OpenEdge.Core.Collections.List			
+							&nbsp; as List, the list to add the element to
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipsElement</span>&nbsp;
+										OpenEdge.Core.String			
+							&nbsp; as string, the element to add
+					</div>
+																																									<div class="parameter">
+						<span class="parameter_code">ipiPosition</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the position to add the element to
+					</div>
+																		
+		<hr/>
+	<a name="GetFirstElement_Method"></a>
+	<div class="section">GetFirstElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Returns the first element from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Default separator is ","
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the first element of the list
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetFirstElement(INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list
+					</div>
+																		
+		<hr/>
+	<a name="GetFirstElement_Method"></a>
+	<div class="section">GetFirstElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Returns the first element from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the first element of the list
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetFirstElement(INPUT:character,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcSeparator</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list separator
+					</div>
+																		
+		<hr/>
+	<a name="GetFirstElement_Method"></a>
+	<div class="section">GetFirstElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Returns the first element from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the first element of the list
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetFirstElement(INPUT:List):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipltList</span>&nbsp;
+										OpenEdge.Core.Collections.List			
+							&nbsp; as List, the list
+					</div>
+																		
+		<hr/>
+	<a name="GetLastElement_Method"></a>
+	<div class="section">GetLastElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Returns the last element from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Default separator is ","
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the last element of the list
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetLastElement(INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list
+					</div>
+																		
+		<hr/>
+	<a name="GetLastElement_Method"></a>
+	<div class="section">GetLastElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Returns the last element from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the last element of the list
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetLastElement(INPUT:character,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcSeparator</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list separator
+					</div>
+																		
+		<hr/>
+	<a name="GetLastElement_Method"></a>
+	<div class="section">GetLastElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Returns the last element from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the last element of the list
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">GetLastElement(INPUT:List):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipltList</span>&nbsp;
+										OpenEdge.Core.Collections.List			
+							&nbsp; as List, the list
+					</div>
+																		
+		<hr/>
+	<a name="HasDuplicates_Method"></a>
+	<div class="section">HasDuplicates method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Checks if the list has any duplicate elements
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Default separator is ","
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, whether the list has duplicates
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">HasDuplicates(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to check
+					</div>
+																		
+		<hr/>
+	<a name="HasDuplicates_Method"></a>
+	<div class="section">HasDuplicates method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Checks if the list has any duplicate elements
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, whether the list has duplicates
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">HasDuplicates(INPUT:character,INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to check
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcSeparator</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list separator
+					</div>
+																		
+		<hr/>
+	<a name="HasDuplicates_Method"></a>
+	<div class="section">HasDuplicates method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Checks if the list has any duplicate elements
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, whether the list has duplicates
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">HasDuplicates(INPUT:List):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipltList</span>&nbsp;
+										OpenEdge.Core.Collections.List			
+							&nbsp; as List, the list to check
+					</div>
+																		
+		<hr/>
+	<a name="HasElement_Method"></a>
+	<div class="section">HasElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Checks if the list contains a specific element
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, whether the list contains the element
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">HasElement(INPUT:character,INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to search in
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcElement</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the element to search for
+					</div>
+																		
+		<hr/>
+	<a name="HasElement_Method"></a>
+	<div class="section">HasElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Checks if the list contains a specific element
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, whether the list contains the element
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">HasElement(INPUT:List,INPUT:string):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipltList</span>&nbsp;
+										OpenEdge.Core.Collections.List			
+							&nbsp; as List, the list to search in
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipsElement</span>&nbsp;
+										OpenEdge.Core.String			
+							&nbsp; as string, the element to search for
+					</div>
+																		
+		<hr/>
+	<a name="HasEmptyElements_Method"></a>
+	<div class="section">HasEmptyElements method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Checks if the list has any empty elements.
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Default separator is ","
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, whether the list has empty elements
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">HasEmptyElements(INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to check
+					</div>
+																		
+		<hr/>
+	<a name="HasEmptyElements_Method"></a>
+	<div class="section">HasEmptyElements method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Checks if the list has any empty elements
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, whether the list has empty elements
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">HasEmptyElements(INPUT:character,INPUT:character):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to check
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcSeparator</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list separator
+					</div>
+																		
+		<hr/>
+	<a name="HasEmptyElements_Method"></a>
+	<div class="section">HasEmptyElements method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Checks if the list has any empty elements
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				LOGICAL			
+	&nbsp;										logical, whether the list has empty elements
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">HasEmptyElements(INPUT:List):LOGICAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipltList</span>&nbsp;
+										OpenEdge.Core.Collections.List			
+							&nbsp; as List, the list to check
+					</div>
+																		
+		<hr/>
+	<a name="RemoveElement_Method"></a>
+	<div class="section">RemoveElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Removes an element from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Default separator is ","
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the list with the element removed
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RemoveElement(INPUT:character,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to remove the element from
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcElement</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the element to remove
+					</div>
+																		
+		<hr/>
+	<a name="RemoveElement_Method"></a>
+	<div class="section">RemoveElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Removes an element from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the list with the element removed
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RemoveElement(INPUT:character,INPUT:character,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to remove the element from
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcElement</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the element to remove
+					</div>
+																																									<div class="parameter">
+						<span class="parameter_code">ipcSeparator</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list separator
+					</div>
+																		
+		<hr/>
+	<a name="RemoveElement_Method"></a>
+	<div class="section">RemoveElement method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Removes an element from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RemoveElement(INPUT:List,INPUT:string)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipltList</span>&nbsp;
+										OpenEdge.Core.Collections.List			
+							&nbsp; as List, the list to remove the element from
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipsElement</span>&nbsp;
+										OpenEdge.Core.String			
+							&nbsp; as string, the element to remove
+					</div>
+																		
+		<hr/>
+	<a name="RemoveElementByPosition_Method"></a>
+	<div class="section">RemoveElementByPosition method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Removes an element at the specified position
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Default separator is ","
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the list with the element removed
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RemoveElementByPosition(INPUT:character,INPUT:integer):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to remove the element from
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipiPosition</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the position of the element to remove
+					</div>
+																		
+		<hr/>
+	<a name="RemoveElementByPosition_Method"></a>
+	<div class="section">RemoveElementByPosition method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Removes an element at the specified position
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the list with the element removed
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RemoveElementByPosition(INPUT:character,INPUT:integer,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to remove the element from
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipiPosition</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the position of the element to remove
+					</div>
+																																									<div class="parameter">
+						<span class="parameter_code">ipcSeparator</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list separator
+					</div>
+																		
+		<hr/>
+	<a name="RemoveElementByPosition_Method"></a>
+	<div class="section">RemoveElementByPosition method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Removes an element at the specified position
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RemoveElementByPosition(INPUT:List,INPUT:integer)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipltList</span>&nbsp;
+										OpenEdge.Core.Collections.List			
+							&nbsp; as List, the list to remove the element from
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipiPosition</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the position of the element to remove
+					</div>
+																		
+		<hr/>
+	<a name="RemoveEmptyElements_Method"></a>
+	<div class="section">RemoveEmptyElements method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Removes all empty elements from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Default separator is ","
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the list with no empty elements
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RemoveEmptyElements(INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to clean
+					</div>
+																		
+		<hr/>
+	<a name="RemoveEmptyElements_Method"></a>
+	<div class="section">RemoveEmptyElements method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Removes all empty elements from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the list with no empty elements
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RemoveEmptyElements(INPUT:character,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to clean
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcSeparator</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list separator
+					</div>
+																		
+		<hr/>
+	<a name="RemoveEmptyElements_Method"></a>
+	<div class="section">RemoveEmptyElements method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Removes all empty elements from the list
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RemoveEmptyElements(INPUT:List)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipltList</span>&nbsp;
+										OpenEdge.Core.Collections.List			
+							&nbsp; as List, the list to clean
+					</div>
+																		
+		<hr/>
+	<a name="SortList_Method"></a>
+	<div class="section">SortList method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Sorts the elements in the list using the default comparer
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Default separator is ","
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the sorted list
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">SortList(INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to sort
+					</div>
+																		
+		<hr/>
+	<a name="SortList_Method"></a>
+	<div class="section">SortList method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Sorts the elements in the list using the default comparer
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, the sorted list
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">SortList(INPUT:character,INPUT:character):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipcList</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list to sort
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipcSeparator</span>&nbsp;
+										CHARACTER			
+							&nbsp; as character, the list separator
+					</div>
+																		
+		<hr/>
+	<a name="SortList_Method"></a>
+	<div class="section">SortList method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Sorts the elements in the list using the default comparer
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				VOID			
+	&nbsp;					</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">SortList(INPUT:List)</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipltList</span>&nbsp;
+										OpenEdge.Core.Collections.List			
+							&nbsp; as List, the list to sort
+					</div>
+																		
+			
+	<!-- ============ END METHOD DETAIL ========== --> 
+	<!-- ============ EVENT DETAIL ========== -->
+		<!-- ============ END EVENT DETAIL ========== -->
+	<!-- ============ PROPERTY DETAIL ========== -->
+		<!-- ============ END PROPERTY DETAIL ========== -->
+
+	<!-- ============ VARIABLE DETAIL ========== -->
+<!-- ============ END VARIABLE DETAIL ========== -->
+
+<!-- ============ BUFFER DETAIL ========== -->
+<!-- ============ END BUFFER DETAIL ========== -->
+
+<!-- ============ DATASET DETAIL ========== -->
+<!-- ============ END DATASET DETAIL ========== -->
+<!-- ============ DATA-SOURCE DETAIL ========== -->
+<!-- ============ END DATA-SOURCE DETAIL ========== -->
+<!-- ============ QUERY DETAIL ========== -->
+<!-- ============ END QUERY DETAIL ========== -->
+<!-- ============ TEMP-TABLE DETAIL ========== -->
+<!-- ============ END TEMP-TABLE DETAIL ========== -->
+	<!-- copyright content placed here will be shown in all the output pages -->
+<footer>
+		<br>
+		<div class="copyright_style">
+			<p><!-- put your copyright here --></p>
+		</div>
+</footer></body>
+</html>

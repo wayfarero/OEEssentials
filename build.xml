@@ -1,0 +1,190 @@
+<project name="ABLapp" default="compile" basedir=".">
+
+	<pathconvert property="ROOT" dirsep="/">
+		<path location="${basedir}" />
+	</pathconvert>
+	
+    <property file="build.properties" />
+    <property name="db.root" location="${basedir}/Dbs" />
+    <property name="db.name" value="" />
+    <property name="db.df" value="${db.root}/${db.name}/df/${db.name}.df" />
+    <property name="db.st" value="${db.root}/${db.name}/st/${db.name}.st" />
+    <property name="db.data" value="${db.root}/${db.name}/data" />
+	
+    <property name="db.created" value="${ROOT}/Created/${db.name}" />
+	
+
+    <property name="dlc.dir" location="$DLC" />
+	
+	<import file="Scripts/common-build-tasks.xml" />
+
+	<!-- Empty output dir -->
+	<target name="clean" description="Clean output dir">
+		<emptyDir PATH="${OUTPUT.DIR}" />
+	</target>
+
+	<target name="cleanBuildOutput" description="Clean build output dir">
+		<emptyDir PATH="${BUILD.OUTPUT.DIR}" />
+	</target>
+
+    <target name="cleanAll" description="Clean all artefacts" depends="clean, cleanBuildOutput, deletedbs"/>
+	
+	<target name="compileAll" >
+        <ant antfile="${basedir}/build.xml" target="compile" inheritall="false"> 
+          <property name="db.name" value="sports2000"/>
+        </ant>   	
+	</target>
+	
+	<!-- Compile ABL code-->
+	<target name="compile" description="Compile ABL source files" depends="cleanBuildOutput, loadDataIntoDBs">
+        <echo message="compile source with ${BUILD.OUTPUT.DIR}" />
+
+		<!-- Compile files in Project Root folder -->
+		<compileABLCode BUILD-OUTPUT="${BUILD.OUTPUT.DIR}" STARTUP-PARAMS="${db.created}/mains.pf" >
+			<ablfiles>
+				<!-- In order to avoid repetative compilation we are excluing these folders,-->
+				<fileset dir="${ROOT}" includes="**/*.p,**/*.cls">
+					<exclude name="**/src/**" />
+				<!--	<exclude name="**/AppServer/**" /> -->
+					<exclude name="**/PASOEContent/**/*" />
+				</fileset>
+				<!-- Compile files in src folder -->
+				<fileset dir="${ROOT}/src" erroronmissingdir="false" includes="**/*.p,**/*.cls">
+				<!--	<exclude name="**/AppServer/**" /> -->
+				</fileset>
+                <!-- Compile files in root folder -->
+                <fileset dir="${ROOT}" erroronmissingdir="false" includes="**/*.p,**/*.cls">
+                </fileset>				
+				<!-- Compile files in AppServer folder -->
+				<!--<fileset dir="${APSV}" includes="**/*.p,**/*.cls" />-->
+			</ablfiles>
+		</compileABLCode>
+		<!-- Call webapp build -->
+		<!-- <ant antfile="${WEBAPP}/build.xml" target="compile" inheritall="false" /> -->
+	</target>
+
+	<!-- Create the ablapp package -->
+	<target name="package" depends="clean, compile">
+		<!-- Build and package the webapp -->
+		<ant antfile="${WEBAPP}/build.xml" target="package" inheritall="false" />
+		<!-- Package ablapp as zip-->
+		<zip destfile="${DIST.DIR}/${PROJECT.NAME}.zip">
+			<zipfileset dir="tlr" prefix="tlr" />
+			<zipfileset dir="conf" prefix="conf" />
+			<!-- zipfileset file="startup.pf" prefix="conf" /-->
+			<zipfileset dir="${BUILD.OUTPUT.DIR}" prefix="openedge">
+				<include name="**/*.r" />
+				<exclude name="**/.pct" />
+			</zipfileset>
+			<zipfileset dir="${WEBAPP.DIST.DIR}" prefix="webapps" includes="*.war" />
+		</zip>
+		<copy file="${DIST.DIR}/${PROJECT.NAME}.zip" todir="../Service" />
+	</target>
+
+	<!-- Build single file -->
+	<target name="compileFile" description="Build single ABL source file" depends="setSourceFilePath, setSourceFileParent, setSinglefileOutputDir">
+		<compileABLCode BUILD-OUTPUT="${SINGLE.OUTPUT.DIR}">
+			<ablfiles>
+				<filelist dir="${SOURCE.FILE.PARENT}">
+					<file name="${SOURCE.FILE.PATH}" />
+				</filelist>
+			</ablfiles>
+		</compileABLCode>
+	</target>
+
+	<!-- set single file path -->
+	<target name="setSourceFilePath" description="Set SOURCE.FILE.PATH with the given user path">
+		<!-- SOURCE.FILE.PATH Eg: /projects/singleFileRun/src/AppServer/custom.p -->
+		<pathconvert property="SOURCE.FILE.PATH" dirsep="/">
+			<path location="${compileFilePath}" />
+		</pathconvert>
+	</target>
+
+    <target name="createDBDirectories">
+        <ant antfile="${basedir}/build.xml" target="createDB" inheritall="false"> 
+          <property name="db.name" value="sports2000"/>
+        </ant>
+    	
+        <echo file="${db.created}/mains.pf">
+            -pf ${db.created}sports2000/sports2000.pf
+        </echo>    	
+    	
+	</target>
+	
+    <target name="createDB" depends="deletedb">
+       <echo message="Creating directory: ${db.created}" />
+       <mkdir dir="${db.created}"/>
+  
+        <delete failonerror="false">
+            <fileset dir="${db.created}" casesensitive="false">
+                <include name="*" />
+            </fileset>
+        </delete>
+
+        <PCTCreateDatabase dbName="${db.name}" dlcHome="${DLC}" destDir="${db.created}" schemaFile="${db.df}" structFile="${db.st}" />
+
+        <echo file="${db.created}/${db.name}.pf">
+            -db ${db.created}/${db.name} -1
+            -h 10
+        </echo>
+    	
+    </target>
+	
+    <target name="deletedbs">
+    	<echo message="Set dbscreated to false" />
+        <property name="dbscreated" value="false" />
+
+    	<ant antfile="${basedir}/build.xml" target="deletedb" inheritall="false"> 
+          <property name="db.name" value="sports2000"/>
+        </ant>   
+        <delete dir="${db.created}" />
+
+    </target>
+    	
+    <target name="deletedb">
+        <echo message="Delete pf file ${db.created}/${db.name}.pf" />
+    	<delete file="${db.created}/${db.name}.pf"/>
+  	
+        <echo message="Delete created db ${db.created} files" />
+        <delete failonerror="false">
+            <fileset dir="${db.created}" casesensitive="false">
+                <include name="*" />
+            </fileset>
+        </delete>    
+    	
+        <echo message="Delete folder ${db.created}" />
+        <delete dir="${db.created}" />
+    	
+    </target>
+
+    <target name="loadDataIntoDBs" depends="createDBDirectories">
+        <ant antfile="${basedir}/build.xml" target="loadData" inheritall="false"> 
+          <property name="db.name" value="sports2000"/>
+        </ant>      
+    </target>	
+	
+    <target name="loadData">
+        <PCTLoadData srcDir="${db.data}" dlcHome="${DLC}">
+            <DBConnection paramFile="${db.created}/${db.name}.pf"/>
+        </PCTLoadData>      
+    </target>   
+	
+    <target name="test_app" depends="compile">
+    	
+        <mkdir dir="${basedir}/Results"/>
+
+        <ABLUnit debugPCT="true" haltOnFailure="true" graphicalMode="false" writeLog="true" destDir="${basedir}/Results" dlcHome="${DLC}">
+
+            <propath>
+                <pathelement path="${basedir}/Tests/TestData" />
+                <pathelement path="${basedir}/Tests" />
+            </propath>
+            <DBConnection paramFile="${db.created}/mains.pf"/>
+            <Profiler enabled="true" outputDir="${basedir}/../target/profiler" coverage="true" />
+            
+            <fileset dir="${basedir}/Tests" includes="**/*.cls"/>
+            
+        </ABLUnit>
+    </target>
+	
+</project>

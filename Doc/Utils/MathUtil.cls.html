@@ -1,0 +1,1018 @@
+<!DOCTYPE html >
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>MathUtil.cls</title>
+
+<link rel="StyleSheet" href="../css/stylesheet.css"
+	type="text/css" media="all">
+
+</head>
+<body>
+
+	<!-- package name  and class name-->
+	<div class="pkg_class_name">
+		 <a href="package.html">Utils</a>: MathUtil CLASS 
+	</div>
+	<br>
+	<!--Class Name -->
+	<div  class="title_name">
+	MathUtil 
+	
+		CLASS</div>
+
+	<!-- class comment should go here -->
+	<div class="paragraph">
+	<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Main helper class to handle math operations
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Author(s)</span>:
+	  										Wayfare
+						<br>
+	  <span class="detail_field_title" width="50px">Notes</span>:
+	  										
+						<br>
+	  <span class="detail_field_title" width="50px">Created</span>:
+	  										Fri Oct 25 10:38:16 EEST 2024
+						<br>
+	</div>
+	
+				
+		
+		
+	<!-- extends section-->
+				<div  class="section">Super Class</div>
+		<div  class="paragraph">
+		<span class="code">
+						Progress.Lang.Object			
+			</span>
+	</div>
+	
+	<!-- inherits section-->
+		
+
+	<!-- CONSTRUCTOR SUMMARY SECTION -->
+		<!-- CONSTRUCTOR SUMMARY SECTION END -->
+
+	<!-- methods summary section -->
+		<div class="title_name">
+		Methods<br>
+	</div>
+	
+	
+
+	<table class="table_summary" cellspacing="0" summary="">
+
+		 
+									<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#CalculateAge_Method"
+						title="CalculateAge">CalculateAge(INPUT:date):INTEGER</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#CalculateAgeAtDate_Method"
+						title="CalculateAgeAtDate">CalculateAgeAtDate(INPUT:date,INPUT:date):INTEGER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#CalculateCos_Method"
+						title="CalculateCos">CalculateCos(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#CalculateDetailedAge_Method"
+						title="CalculateDetailedAge">CalculateDetailedAge(INPUT:date):CHARACTER</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#CalculateSin_Method"
+						title="CalculateSin">CalculateSin(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#CalculateTan_Method"
+						title="CalculateTan">CalculateTan(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#CosDegrees_Method"
+						title="CosDegrees">CosDegrees(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#CosRadians_Method"
+						title="CosRadians">CosRadians(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#RoundDown_Method"
+						title="RoundDown">RoundDown(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#RoundToDecimalPlaces_Method"
+						title="RoundToDecimalPlaces">RoundToDecimalPlaces(INPUT:decimal,INPUT:integer):DECIMAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#RoundToWhole_Method"
+						title="RoundToWhole">RoundToWhole(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#RoundUp_Method"
+						title="RoundUp">RoundUp(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#SinDegrees_Method"
+						title="SinDegrees">SinDegrees(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#SinRadians_Method"
+						title="SinRadians">SinRadians(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#TanDegrees_Method"
+						title="TanDegrees">TanDegrees(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+														<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#TanRadians_Method"
+						title="TanRadians">TanRadians(INPUT:decimal):DECIMAL</a>
+				</div>
+			</td> 
+								</tr>
+										<tr>
+						<td class="table_data">
+				<div  class="cell_data">
+					<a	href="MathUtil.cls.html#TimeUntilBirthday_Method"
+						title="TimeUntilBirthday">TimeUntilBirthday(INPUT:date):INTEGER</a>
+				</div>
+			</td> 
+												</tr>
+			</table>
+	
+		<!-- method summary section end -->
+
+
+	<!-- EVENT SUMMARY SECTION -->
+		<!-- EVENT SUMMARY SECTION END -->
+
+	<!-- PROPERTY SUMMARY SECTION -->
+		<!-- PROPERTY SUMMARY SECTION END -->
+
+	
+<!-- VARIABLE SUMMARY SECTION -->
+<!-- VARIABLE SUMMARY SECTION END -->
+
+
+<!-- BUFFER SUMMARY SECTION -->
+<!-- BUFFER SUMMARY SECTION END -->
+
+<!-- DATASET SUMMARY SECTION -->
+<!-- DATASET SUMMARY SECTION END -->
+
+
+<!-- DATA-SOURCE SUMMARY SECTION -->
+<!-- DATA-SOURCE SUMMARY SECTION END -->
+
+<!-- QUERY SUMMARY SECTION -->
+<!-- QUERY SUMMARY SECTION END -->
+
+<!-- TEMP-TABLE SUMMARY SECTION -->
+<!-- TEMP-TABLE SUMMARY SECTION END -->
+	
+	<!-- ============ CONSTRUCTOR DETAIL ========== --> 
+		
+	<!-- ============ END CONSTRUCTOR DETAIL ========== --> 
+	<!-- ============ METHOD DETAIL ========== -->
+	
+		
+	<div class="title_name">
+		Method Detail<br>
+	</div>
+	 
+		<hr/>
+	<a name="CalculateAge_Method"></a>
+	<div class="section">CalculateAge method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the age in years based on a birthdate
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				INTEGER			
+	&nbsp;										integer, the calculated age in years
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">CalculateAge(INPUT:date):INTEGER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdBirthDate</span>&nbsp;
+										DATE			
+							&nbsp; as date, the date of birth
+					</div>
+																		
+		<hr/>
+	<a name="CalculateAgeAtDate_Method"></a>
+	<div class="section">CalculateAgeAtDate method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate age in years at a specific date
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				INTEGER			
+	&nbsp;										integer, the calculated age at the specified date
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">CalculateAgeAtDate(INPUT:date,INPUT:date):INTEGER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdBirthDate</span>&nbsp;
+										DATE			
+							&nbsp; as date, the date of birth
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">dAtDate</span>&nbsp;
+										DATE			
+							&nbsp; as date, the reference date to calculate the age at
+					</div>
+																		
+		<hr/>
+	<a name="CalculateCos_Method"></a>
+	<div class="section">CalculateCos method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the cosine using libm.so.6:cos
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the cosine of the angle
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">CalculateCos(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeAngle</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the angle in radians
+					</div>
+																		
+		<hr/>
+	<a name="CalculateDetailedAge_Method"></a>
+	<div class="section">CalculateDetailedAge method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the age in years, months, and days based on a birthdate
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				CHARACTER			
+	&nbsp;										character, a string with the detailed age in "X years, Y months, Z days" format
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">CalculateDetailedAge(INPUT:date):CHARACTER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdBirthDate</span>&nbsp;
+										DATE			
+							&nbsp; as date, the date of birth
+					</div>
+																		
+		<hr/>
+	<a name="CalculateSin_Method"></a>
+	<div class="section">CalculateSin method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the sine using libm.so.6:sin
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the sine of the angle
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">CalculateSin(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeAngle</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the angle in radians
+					</div>
+																		
+		<hr/>
+	<a name="CalculateTan_Method"></a>
+	<div class="section">CalculateTan method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the tangent using libm.so.6:tan
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the tangent of the angle
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">CalculateTan(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeAngle</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the angle in radians
+					</div>
+																		
+		<hr/>
+	<a name="CosDegrees_Method"></a>
+	<div class="section">CosDegrees method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the cosine of an angle in degrees
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Uses the 'Cos' method of System.Math
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the cosine of the angle
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">CosDegrees(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeDegrees</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the angle in degrees
+					</div>
+																		
+		<hr/>
+	<a name="CosRadians_Method"></a>
+	<div class="section">CosRadians method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the cosine of an angle in radians
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Uses the 'Cos' method of System.Math
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the cosine of the angle
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">CosRadians(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeRadians</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the angle in radians
+					</div>
+																		
+		<hr/>
+	<a name="RoundDown_Method"></a>
+	<div class="section">RoundDown method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Rounds a decimal value down to the nearest whole number (floor)
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Uses truncate to achieve floor behavior for positive numbers, and adjusts for negative values
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the rounded-down value
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RoundDown(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeValue</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the value to round down
+					</div>
+																		
+		<hr/>
+	<a name="RoundToDecimalPlaces_Method"></a>
+	<div class="section">RoundToDecimalPlaces method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Rounds a decimal value to a specified number of decimal places
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the rounded value
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RoundToDecimalPlaces(INPUT:decimal,INPUT:integer):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeValue</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the value to round
+					</div>
+																																		<div class="parameter">
+						<span class="parameter_code">ipiDecimals</span>&nbsp;
+										INTEGER			
+							&nbsp; as integer, the number of decimal places
+					</div>
+																		
+		<hr/>
+	<a name="RoundToWhole_Method"></a>
+	<div class="section">RoundToWhole method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Rounds a decimal value to the nearest whole number
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the rounded value
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RoundToWhole(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeValue</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the value to round
+					</div>
+																		
+		<hr/>
+	<a name="RoundUp_Method"></a>
+	<div class="section">RoundUp method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Rounds a decimal value up to the nearest whole number (ceiling)
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Uses truncate and checks for fractional values to round up
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the rounded-up value
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">RoundUp(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeValue</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the value to round up
+					</div>
+																		
+		<hr/>
+	<a name="SinDegrees_Method"></a>
+	<div class="section">SinDegrees method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the sine of an angle in degrees
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Uses the 'Sin' method of System.Math
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the sine of the angle
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">SinDegrees(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeDegrees</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the angle in degrees
+					</div>
+																		
+		<hr/>
+	<a name="SinRadians_Method"></a>
+	<div class="section">SinRadians method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the sine of an angle in radians
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Uses the 'Sin' method of System.Math
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the sine of the angle
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">SinRadians(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeRadians</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the angle in radians
+					</div>
+																		
+		<hr/>
+	<a name="TanDegrees_Method"></a>
+	<div class="section">TanDegrees method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the tangent of an angle in degrees
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Uses the 'Tan' method of System.Math
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the tangent of the angle
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">TanDegrees(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeDegrees</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the angle in degrees
+					</div>
+																		
+		<hr/>
+	<a name="TanRadians_Method"></a>
+	<div class="section">TanRadians method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the tangent of an angle in radians
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										Uses the 'Tan' method of System.Math
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				System.Decimal			
+	&nbsp;										decimal, the tangent of the angle
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">TanRadians(INPUT:decimal):DECIMAL</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdeRadians</span>&nbsp;
+										System.Decimal			
+							&nbsp; as decimal, the angle in radians
+					</div>
+																		
+		<hr/>
+	<a name="TimeUntilBirthday_Method"></a>
+	<div class="section">TimeUntilBirthday method</div>
+	
+	<div class="paragraph">
+		<!-- tags should go here -->
+			<span class="detail_field_title" width="50px">Purpose</span>:
+	  										Calculate the number of days until the next birthday from today
+						<br>
+	  <span class="detail_field_title" width="50px">Description</span>:
+	  										
+						<br>
+
+	</div>
+	<div class="detail_field">
+		<span class="detail_field_title" width="50px">Return type</span>:&nbsp;				INTEGER			
+	&nbsp;										integer, the number of days until the next birthday
+							</div>
+	<div class="detail_field">
+		<span class="detail_field_title" >Modifiers </span>:&nbsp;
+					PUBLIC &nbsp
+					STATIC &nbsp
+			</div>
+	
+	<table class="table_syntax" cellspacing="0" summary="">
+		<caption class="syntax-title">
+				<span>Syntax</span>&nbsp;
+		</caption>
+		<tr>
+			<td class="element_detail">
+				<span class="element_detail_code">TimeUntilBirthday(INPUT:date):INTEGER</span>
+			</td>
+		</tr>
+	</table>
+	
+			<div class="syntax-title">
+		<span>Parameters</span>&nbsp;
+	</div>
+																<div class="parameter">
+						<span class="parameter_code">ipdBirthDate</span>&nbsp;
+										DATE			
+							&nbsp; as date, the date of birth
+					</div>
+																		
+			
+	<!-- ============ END METHOD DETAIL ========== --> 
+	<!-- ============ EVENT DETAIL ========== -->
+		<!-- ============ END EVENT DETAIL ========== -->
+	<!-- ============ PROPERTY DETAIL ========== -->
+		<!-- ============ END PROPERTY DETAIL ========== -->
+
+	<!-- ============ VARIABLE DETAIL ========== -->
+<!-- ============ END VARIABLE DETAIL ========== -->
+
+<!-- ============ BUFFER DETAIL ========== -->
+<!-- ============ END BUFFER DETAIL ========== -->
+
+<!-- ============ DATASET DETAIL ========== -->
+<!-- ============ END DATASET DETAIL ========== -->
+<!-- ============ DATA-SOURCE DETAIL ========== -->
+<!-- ============ END DATA-SOURCE DETAIL ========== -->
+<!-- ============ QUERY DETAIL ========== -->
+<!-- ============ END QUERY DETAIL ========== -->
+<!-- ============ TEMP-TABLE DETAIL ========== -->
+<!-- ============ END TEMP-TABLE DETAIL ========== -->
+	<!-- copyright content placed here will be shown in all the output pages -->
+<footer>
+		<br>
+		<div class="copyright_style">
+			<p><!-- put your copyright here --></p>
+		</div>
+</footer></body>
+</html>
