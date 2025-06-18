@@ -40,10 +40,47 @@ class Utils.ListUtil:
                                                input ipcElement   as character,
                                                input ipcSeparator as character ):
         
-        return ipcList + ipcSeparator + ipcElement.
+        return AddElement(ipcList, ipcElement, ipcSeparator, false).
+        
+    end method.
+
+    /*------------------------------------------------------------------------------
+        Purpose: Adds a new element at the end of the list
+        Notes:
+        @param ipcList as character, the list to add the element to
+        @param ipcElement as character, the element to add
+        @param ipcSeparator as character, the list separator
+        @return character, the list with the added element
+    ------------------------------------------------------------------------------*/
+    method public static character AddElement( input ipcList      as character, 
+                                               input ipcElement   as character,
+                                               input iplDedupe    as logical ):
+        
+        return AddElement(ipcList, ipcElement, ",", iplDedupe).
         
     end method.
     
+    
+    /*------------------------------------------------------------------------------
+        Purpose: Adds a new element at the end of the list
+        Notes:
+        @param ipcList as character, the list to add the element to
+        @param ipcElement as character, the element to add
+        @param ipcSeparator as character, the list separator
+        @param iplDedupe as logical, the list dedupe flag
+        @return character, the list with the added element
+    ------------------------------------------------------------------------------*/
+    method public static character AddElement( input ipcList      as character, 
+                                               input ipcElement   as character,
+                                               input ipcSeparator as character,
+                                               input iplDedupe    as logical ):
+        
+        if not iplDedupe or (iplDedupe and lookup(ipcElement, ipcList, ipcSeparator) = 0) then 
+            ipcList = left-trim(substitute("&1&2&3", ipcList, ipcSeparator, ipcElement), ipcSeparator).
+        
+        return ipcList.
+        
+    end method.
     /*------------------------------------------------------------------------------
         Purpose: Adds a new element at the end of the list
         Notes: Default separator is ","
@@ -154,11 +191,19 @@ class Utils.ListUtil:
                                                   input ipcElement   as character, 
                                                   input ipcSeparator as character ):
         
-        if lookup(ipcElement, ipcList, ipcSeparator) = 0 then 
-            return ipcList.
         
-        return replace(ipcList, ipcElement + ipcSeparator, "").
-
+        if ipcElement = "" then 
+            ipcList = RemoveEmptyElements(ipcList, ipcSeparator).
+        else do:
+            if lookup(ipcElement, ipcList, ipcSeparator) = 0 then 
+                return ipcList.
+            assign
+                ipclist = trim(replace(ipcList, ipcElement, ""), ipcSeparator)
+                ipclist = replace(ipcList, fill(ipcSeparator, 2), ipcSeparator).
+        end.        
+        
+        return ipcList. 
+        
     end method.
     
     /*------------------------------------------------------------------------------
@@ -170,15 +215,11 @@ class Utils.ListUtil:
     ------------------------------------------------------------------------------*/
     method public static character RemoveElement( input ipcList    as character, 
                                                   input ipcElement as character ): 
-        define variable iElementPos as integer no-undo.
-        
-        iElementPos = lookup(ipcElement, ipcList).
-        
-        if iElementPos = 0 then 
-            return ipcList.
-        
-        return replace(ipcList, ipcElement + ",", "").
-
+        if ipcElement = "" then 
+            return RemoveEmptyElements(ipcList).
+        else 
+            return RemoveElement(ipcList, ipcElement, ",").
+            
     end method.    
 
     /*------------------------------------------------------------------------------
