@@ -214,7 +214,7 @@ class Utils.FileUtil:
         iPosition = r-index(ipcPath, ".").
         
         if iPosition > 0 then 
-            cFileExtension = substring(ipcPath, iPosition, length(ipcPath)).
+            cFileExtension = substring(ipcPath, iPosition + 1).
          
         if cFileExtension = "" or cFileExtension = ? then
             undo, throw new Progress.Lang.AppError("Invalid file extension.", 1).

@@ -240,13 +240,13 @@ class Tests.FileUtilUnitTest:
         define variable cPath as character no-undo. 
          
         cPath = FileUtil:NormalizePath("Tests\\FileUtilTestData\\GetFileExtension\\file1.txt").
-        Assert:Equals(FileUtil:GetFileExtension(cPath), ".txt").
+        Assert:Equals(FileUtil:GetFileExtension(cPath), "txt").
 
         cPath = FileUtil:NormalizePath("Tests\\FileUtilTestData\\GetFileExtension\\file2.docx").
-        Assert:Equals(FileUtil:GetFileExtension(cPath), ".docx").
+        Assert:Equals(FileUtil:GetFileExtension(cPath), "docx").
 
         cPath = FileUtil:NormalizePath("Tests\\FileUtilTestData\\GetFileExtension\\file3.bmp").
-        Assert:Equals(FileUtil:GetFileExtension(cPath), ".bmp").
+        Assert:Equals(FileUtil:GetFileExtension(cPath), "bmp").
      
     end method.   
      
