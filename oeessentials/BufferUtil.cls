@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.BufferUtil:
+class oeessentials.BufferUtil:
     
     /*------------------------------------------------------------------------------
         Purpose: Sets the value of a field in the buffer

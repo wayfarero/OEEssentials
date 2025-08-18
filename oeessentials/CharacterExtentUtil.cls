@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.CharacterExtentUtil: 
+class oeessentials.CharacterExtentUtil: 
 
     /*------------------------------------------------------------------------------
         Purpose: Add element to array

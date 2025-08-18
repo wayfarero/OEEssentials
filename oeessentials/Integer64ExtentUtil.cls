@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.Integer64ExtentUtil: 
+class oeessentials.Integer64ExtentUtil: 
 
     /*------------------------------------------------------------------------------
         Purpose: Add an element to an array

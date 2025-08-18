@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.EmailUtil: 
+class oeessentials.EmailUtil: 
 
     /*------------------------------------------------------------------------------
         Purpose: Return the domain of an email

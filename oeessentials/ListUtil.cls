@@ -13,7 +13,7 @@ block-level on error undo, throw.
 using OpenEdge.Core.Collections.List.
 using OpenEdge.Core.String.
 
-class Utils.ListUtil: 
+class oeessentials.ListUtil: 
     
     /*------------------------------------------------------------------------------
         Purpose: Adds a new element at the end of the list
@@ -130,7 +130,7 @@ class Utils.ListUtil:
         define variable cListLeft  as character no-undo.
         define variable cListRight as character no-undo.
         
-        if ipiPosition < 0 or ipiPosition > num-entries(ipcList, ipcSeparator) then
+        if ipiPosition <= 0 or ipiPosition > num-entries(ipcList, ipcSeparator) + 1 then
             return ipcList.
         
         do iCount = 1 to ipiPosition - 1:
@@ -145,7 +145,7 @@ class Utils.ListUtil:
             cListLeft  = trim(cListLeft, ipcSeparator)
             cListRight = trim(cListRight, ipcSeparator).
         
-        return cListLeft + ipcSeparator + ipcElement + (if cListRight <> "" then ipcSeparator + cListRight else "").
+        return trim(cListLeft + ipcSeparator + ipcElement + (if cListRight <> "" then ipcSeparator + cListRight else ""), ipcSeparator).
         
     end method.
     
@@ -191,18 +191,19 @@ class Utils.ListUtil:
                                                   input ipcElement   as character, 
                                                   input ipcSeparator as character ):
         
-        
         if ipcElement = "" then 
             ipcList = RemoveEmptyElements(ipcList, ipcSeparator).
         else do:
             if lookup(ipcElement, ipcList, ipcSeparator) = 0 then 
                 return ipcList.
-            assign
-                ipclist = trim(replace(ipcList, ipcElement, ""), ipcSeparator)
-                ipclist = replace(ipcList, fill(ipcSeparator, 2), ipcSeparator).
-        end.        
-        
-        return ipcList. 
+               
+            ipcList = trim(replace(ipcList, ipcElement + ipcSeparator, ""), ipcSeparator).
+            
+            if num-entries(ipcList, ipcElement) > 0 then 
+                ipcList = replace(ipcList, ipcElement, "").
+        end.            
+
+        return trim(ipcList, ipcSeparator). 
         
     end method.
     
@@ -252,10 +253,12 @@ class Utils.ListUtil:
         if ipiPosition < 0 or ipiPosition > num-entries(ipcList, ipcSeparator) then
             return ipcList.
         
-        do iCount = 1 to num-entries(ipcList, ipcSeparator): 
-            if iCount <> ipiPosition then
-                cNewList = (if cNewList = "" then entry(iCount, ipcList, ipcSeparator) 
-                else cNewList + ipcSeparator + entry(iCount, ipcList, ipcSeparator)).
+        do iCount = 1 to num-entries(ipcList, ipcSeparator):
+            if iCount <> ipiPosition then 
+                if cNewList = "" then 
+                    cNewList = entry(iCount, ipcList, ipcSeparator). 
+                else 
+                    cNewList = cNewList + ipcSeparator + entry(iCount, ipcList, ipcSeparator).
         end.
         
         return cNewList.
@@ -596,15 +599,18 @@ class Utils.ListUtil:
     ------------------------------------------------------------------------------*/
     method public static character RemoveEmptyElements( input ipcList      as character,
                                                         input ipcSeparator as character ):
+                                                            
         define variable iCount as integer no-undo.
 
         do iCount = 1 to num-entries(ipcList, ipcSeparator):
-            if entry(iCount, ipcList, ipcSeparator) = " " then 
+            if entry(iCount, ipcList, ipcSeparator) = "" then do: 
                 ipcList = RemoveElementByPosition(ipcList, iCount, ipcSeparator).
+                iCount = iCount - 1.
+            end.
         end.
         
         return ipcList.
-
+        
     end method.    
 
     /*------------------------------------------------------------------------------
@@ -618,5 +624,85 @@ class Utils.ListUtil:
         return RemoveEmptyElements(ipcList, ",").
 
     end method.    
+
+
+    /*------------------------------------------------------------------------------
+        Purpose: Removes all duplicate elements from the list
+        Notes: Default separator is ","
+        @param ipcList as character, the list to clean
+        @return character, the list with no duplicate elements
+    ------------------------------------------------------------------------------*/
+    method public static character RemoveDuplicateElements( input ipcList as character ):
+        
+        return RemoveDuplicateElements(ipcList, ",").
+
+    end method.    
+
+    /*------------------------------------------------------------------------------
+        Purpose: Removes all duplicate elements from the list
+        Notes: Default separator is ","
+        @param ipcList as character, the list to clean
+        @return character, the list with no duplicate elements
+    ------------------------------------------------------------------------------*/
+    method public static character RemoveDuplicateElements( input ipcList as character, 
+                                                            input ipcSeparator as character ):
+        define variable iCount as integer   no-undo.
+        define variable cEntry as character no-undo.
+
+        if ipcList = "" or num-entries(ipcList, ipcSeparator) = 1 then
+            return ipcList.
+            
+        iCount = 1. 
+        
+        repeat:
+            if iCount > num-entries(ipcList, ipcSeparator) then 
+                leave.     
+            
+            cEntry = entry(iCount, ipcList, ipcSeparator).
+            
+            if HasDuplicateElement(ipcList, cEntry, ipcSeparator) then 
+            do:                        
+                if cEntry = "" then
+                do:
+                    ipcList = RemoveEmptyElements(ipcList, ipcSeparator).
+                    next.
+                end.
+                else do:
+                    ipcList = RemoveElement(ipcList, cEntry, ipcSeparator).
+                    next. 
+                end.
+            end.
+                        
+            iCount = iCount + 1.
+        end.
+        
+        return ipcList.
+
+    end method.
+    
+    method private static logical HasDuplicateElement( input ipcList as character,
+                                                       input ipcElement as character,  
+                                                       input ipcSeparator as character ):
+        define variable iEntry as integer no-undo.
+        define variable iCount as integer no-undo.
+                
+        if ipcList = "" or num-entries(ipcList, ipcSeparator) = 1 then
+            return false.
+        
+        iEntry = lookup(ipcElement, ipcList, ipcSeparator).
+        if iEntry = 0 then 
+        return false.    
+        
+        if iEntry = num-entries(ipcList, ipcSeparator)
+        then return false.
+        
+        do iCount = iEntry + 1 to num-entries(ipcList, ipcSeparator):
+            if entry(iCount, ipcList, ipcSeparator) = ipcElement 
+            then return true.
+        end.
+        
+        return false.            
+                                                
+    end method.
     
 end class.

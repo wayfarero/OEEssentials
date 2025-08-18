@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.LongcharUtil: 
+class oeessentials.LongcharUtil: 
     
     /*------------------------------------------------------------------------------
         Purpose: Check if a string is empty

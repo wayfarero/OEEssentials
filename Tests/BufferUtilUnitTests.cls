@@ -11,7 +11,7 @@
 block-level on error undo, throw.
 
 using OpenEdge.Core.Assert.
-using Utils.BufferUtil.
+using oeessentials.BufferUtil.
 
 class Tests.BufferUtilUnitTests:
     

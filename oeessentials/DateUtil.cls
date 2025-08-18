@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.DateUtil: 
+class oeessentials.DateUtil: 
 
     /*------------------------------------------------------------------------------
         Purpose: Return the week number of a given date

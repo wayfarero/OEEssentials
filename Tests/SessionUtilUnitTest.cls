@@ -12,7 +12,7 @@ block-level on error undo, throw.
 
 using OpenEdge.Core.Assert.
 using OpenEdge.Core.Session.
-using Utils.SessionUtil.
+using oeessentials.SessionUtil.
 
 class Tests.SessionUtilUnitTest: 
     

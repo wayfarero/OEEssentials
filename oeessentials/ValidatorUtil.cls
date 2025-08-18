@@ -14,10 +14,10 @@ using System.Text.RegularExpressions.Regex.
 &ENDIF
 
 &IF OPSYS = "UNIX" &THEN
-using Utils.RegexLinuxUtil.
+using oeessentials.RegexLinuxUtil.
 &ENDIF
 
-class Utils.ValidatorUtil:
+class oeessentials.ValidatorUtil:
 
     /*------------------------------------------------------------------------------
         Purpose: Validates if an email address is in a standard format

@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.DecimalExtentUtil: 
+class oeessentials.DecimalExtentUtil: 
 
     /*------------------------------------------------------------------------------
         Purpose: Add element to array

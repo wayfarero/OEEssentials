@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.EmailSenderUnixUtil:
+class oeessentials.EmailSenderUnixUtil:
 
     /*------------------------------------------------------------------------------
         Purpose: Send an email on Linux using curl

@@ -11,7 +11,7 @@
 block-level on error undo, throw.
 
 using OpenEdge.Core.Assert.
-using Utils.Integer64ExtentUtil.
+using oeessentials.Integer64ExtentUtil.
 
 class Tests.Integer64ExtentUtilUnitTest: 
     /*------------------------------------------------------------------------------

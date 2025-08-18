@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-using Utils.StringUtil.
+using oeessentials.StringUtil.
 
 &IF OPSYS = "WIN32" &THEN
 using System.Net.Mail.MailAddress.
@@ -21,7 +21,7 @@ using System.Net.SecurityProtocolType.
 using System.Net.ServicePointManager.
 &ENDIF
 
-class Utils.EmailSenderWindowsUtil: 
+class oeessentials.EmailSenderWindowsUtil: 
     
     /*------------------------------------------------------------------------------
         Purpose: Send an email on Windows

@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.DecimalUtil: 
+class oeessentials.DecimalUtil: 
     
     /*------------------------------------------------------------------------------
         Purpose: Check if a given decimal is zero

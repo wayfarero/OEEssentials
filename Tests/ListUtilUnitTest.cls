@@ -13,7 +13,7 @@ block-level on error undo, throw.
 using OpenEdge.Core.Assert.
 using OpenEdge.Core.Collections.List.
 using OpenEdge.Core.String.
-using Utils.ListUtil.
+using oeessentials.ListUtil.
 
 class Tests.ListUtilUnitTest: 
     
@@ -30,8 +30,11 @@ class Tests.ListUtilUnitTest:
             sElement = new string("addElement").
         
         ListUtil:AddElement(cList, sElement).
-        
         Assert:Equals(cList:IndexOf(sElement), 5).
+
+        sElement = new string("").
+        ListUtil:AddElement(cList, sElement).
+        Assert:Equals(cList:IndexOf(sElement), 6).
         
     end method.
     
@@ -48,15 +51,63 @@ class Tests.ListUtilUnitTest:
             cElement = "addElement".
         
         cList = ListUtil:AddElement(cList, cElement, ",").
-        Assert:NonZero(index(cList, "addElement")).
+        Assert:Equals("firstElement,secondElement,thirdElement,fourthElement,addElement", cList).
+        
+        cList = ListUtil:AddElement(cList, "thirdElement", ",").
+        Assert:Equals("firstElement,secondElement,thirdElement,fourthElement,addElement,thirdElement", cList).
         
         cList = "firstElement|secondElement|thirdElement|fourthElement".
-        
         cList = ListUtil:AddElement(cList, cElement, "|").
-        Assert:NonZero(index(cList, "addElement")).
+        Assert:Equals("firstElement|secondElement|thirdElement|fourthElement|addElement", cList).
+        
+        cList = ListUtil:AddElement(cList, "thirdElement", "|").
+        Assert:Equals("firstElement|secondElement|thirdElement|fourthElement|addElement|thirdElement", cList).
         
     end method.
-    
+
+    @Test.
+    method public void TestAddElementCharacterListEmpty():
+        define variable cList    as character no-undo. 
+        define variable cElement as character no-undo. 
+
+        cList = ListUtil:AddElement(cList, "").
+        Assert:Equals("", cList).
+        
+        cList = ListUtil:AddElement(cList, "addElement").
+        Assert:Equals("addElement", cList).
+
+        cList = ListUtil:AddElement(cList, "").
+        Assert:Equals("addElement,", cList).
+        
+        cList = "".
+        cList = ListUtil:AddElement(cList, "", "|").
+        Assert:Equals("", cList).
+        
+        cList = ListUtil:AddElement(cList, "addElement", "|").
+        Assert:Equals("addElement", cList).
+
+        cList = ListUtil:AddElement(cList, "", "|").
+        Assert:Equals("addElement|", cList).
+        
+    end method.
+
+    @Test.
+    method public void TestAddElementCharacterListDedupe():
+        define variable cList    as character no-undo. 
+        define variable cElement as character no-undo. 
+        
+        cElement = "addElement".
+        cList = ListUtil:AddElement(cList, cElement).
+        Assert:Equals("addElement", cList).
+        
+        cList = ListUtil:AddElement(cList, cElement, true).
+        Assert:Equals("addElement", cList).
+        
+        cList = ListUtil:AddElement(cList, cElement, false).
+        Assert:Equals("addElement,addElement", cList).
+        
+    end method.
+
     /*------------------------------------------------------------------------------
         Purpose: Test AddElement method
     ------------------------------------------------------------------------------*/
@@ -70,7 +121,7 @@ class Tests.ListUtilUnitTest:
             cElement = "addElement".
         
         cList = ListUtil:AddElement(cList, cElement).
-        Assert:NonZero(index(cList, "addElement")).
+        Assert:Equals("firstElement,secondElement,thirdElement,fourthElement,addElement", cList).
         
     end method.
     
@@ -86,7 +137,7 @@ class Tests.ListUtilUnitTest:
             cList    = GetInitialList()
             sElement = new string("addElement").
             
-        ListUtil:AddElementByPosition(cList, sElement ,2).
+        ListUtil:AddElementByPosition(cList, sElement, 2).
 
         Assert:Equals(cList:IndexOf(sElement), 2).
 
@@ -105,9 +156,17 @@ class Tests.ListUtilUnitTest:
             cElement = "addElement".
         
         cList = ListUtil:AddElementByPosition(cList, cElement, "|", 2).
+        Assert:Equals("firstElement|addElement|secondElement|thirdElement|fourthElement", cList).
+
+        cList = ListUtil:AddElementByPosition(cList, cElement, "|", 1).
+        Assert:Equals("addElement|firstElement|addElement|secondElement|thirdElement|fourthElement", cList).
         
-        Assert:Equals(entry(2, cList, "|"), "addElement").
+        cList = ListUtil:AddElementByPosition(cList, cElement, "|", 7).
+        Assert:Equals("addElement|firstElement|addElement|secondElement|thirdElement|fourthElement|addElement", cList).
         
+        cList = ListUtil:AddElementByPosition(cList, "", "|", 4).
+        Assert:Equals("addElement|firstElement|addElement||secondElement|thirdElement|fourthElement|addElement", cList).
+
     end method.
     
     /*------------------------------------------------------------------------------
@@ -123,8 +182,16 @@ class Tests.ListUtilUnitTest:
             cElement = "addElement".
         
         cList = ListUtil:AddElementByPosition(cList, cElement, 2).
+        Assert:Equals("firstElement,addElement,secondElement,thirdElement,fourthElement", cList).
+
+        cList = ListUtil:AddElementByPosition(cList, cElement, 1).
+        Assert:Equals("addElement,firstElement,addElement,secondElement,thirdElement,fourthElement", cList).
         
-        Assert:Equals(entry(2, cList, ","), "addElement").
+        cList = ListUtil:AddElementByPosition(cList, cElement, 7).
+        Assert:Equals("addElement,firstElement,addElement,secondElement,thirdElement,fourthElement,addElement", cList).
+        
+        cList = ListUtil:AddElementByPosition(cList, "", 4).
+        Assert:Equals("addElement,firstElement,addElement,,secondElement,thirdElement,fourthElement,addElement", cList).
         
     end method.
 
@@ -151,17 +218,39 @@ class Tests.ListUtilUnitTest:
     ------------------------------------------------------------------------------*/
     @Test.
     method public void TestRemoveElementCharacter():
-        define variable cList    as character no-undo. 
-        define variable cElement as character no-undo. 
+        define variable cList as character no-undo. 
         
-        assign 
-            cList    = "firstElement|secondElement|thirdElement|fourthElement"
-            cElement = "secondElement".
-            
-        cList = ListUtil:RemoveElement(cList, cElement, "|").
-        
-        Assert:Equals(lookup(cElement, cList, "|"), 0).
+        cList = "firstElement|secondElement|thirdElement|fourthElement".
+        cList = ListUtil:RemoveElement(cList, "secondElement", "|").
+        Assert:Equals("firstElement|thirdElement|fourthElement", cList).
 
+        cList = ListUtil:RemoveElement(cList, "firstElement", "|").
+        Assert:Equals("thirdElement|fourthElement", cList).
+
+        cList = "firstElement|secondElement|thirdElement|fourthElement".
+        cList = ListUtil:RemoveElement(cList, "fourthElement", "|").
+        Assert:Equals("firstElement|secondElement|thirdElement", cList).
+
+        cList = "firstElement|secondElement||fourthElement|".
+        cList = ListUtil:RemoveElement(cList, "", "|").
+        Assert:NotFalse("firstElement|secondElement|fourthElement" = cList, substitute("1 empty string remove expected: firstElement|secondElement|fourthElement but was &1", cList)).
+
+        cList = "firstElement|secondElement||fourthElement|".
+        cList = ListUtil:RemoveElement(cList, " ", "|").
+        Assert:NotFalse("firstElement|secondElement|fourthElement" = cList, substitute("1 space remove expected: firstElement|secondElement|fourthElement but was &1", cList)).
+
+        cList = "firstElement|secondElement| |fourthElement|".
+        cList = ListUtil:RemoveElement(cList, "", "|").
+        Assert:NotFalse("firstElement|secondElement|fourthElement" = cList, substitute("2 empty string remove expected: firstElement|secondElement|fourthElement but was &1", cList)).
+
+        cList = "firstElement|secondElement| |fourthElement|".
+        cList = ListUtil:RemoveElement(cList, " ", "|").
+        Assert:NotFalse("firstElement|secondElement|fourthElement" = cList, substitute("2 space remove expected: firstElement|secondElement|fourthElement but was &1", cList)).
+        
+        cList = "firstElement|secondElement|secondElement|secondElement|secondElement|firstElement".
+        cList = ListUtil:RemoveElement(cList, "secondElement", "|").
+        Assert:Equals("firstElement|firstElement", cList).   
+         
     end method.
     
     /*------------------------------------------------------------------------------
@@ -169,16 +258,38 @@ class Tests.ListUtilUnitTest:
     ------------------------------------------------------------------------------*/
     @Test.
     method public void TestRemoveElementCharacterDefaultSeparator():
-        define variable cList    as character no-undo. 
-        define variable cElement as character no-undo. 
+        define variable cList as character no-undo. 
         
-        assign 
-            cList    = "firstElement,secondElement,thirdElement,fourthElement"
-            cElement = "secondElement".
-         
-        cList = ListUtil:RemoveElement(cList, cElement).   
+        cList = "firstElement,secondElement,thirdElement,fourthElement".
+        cList = ListUtil:RemoveElement(cList, "secondElement").
+        Assert:Equals("firstElement,thirdElement,fourthElement", cList).
+
+        cList = ListUtil:RemoveElement(cList, "firstElement").
+        Assert:Equals("thirdElement,fourthElement", cList).
+
+        cList = "firstElement,secondElement,thirdElement,fourthElement".
+        cList = ListUtil:RemoveElement(cList, "fourthElement").
+        Assert:Equals("firstElement,secondElement,thirdElement", cList).
+
+        cList = "firstElement,secondElement,,fourthElement,".
+        cList = ListUtil:RemoveElement(cList, "").
+        Assert:NotFalse("firstElement,secondElement,fourthElement" = cList, substitute("1 empty string remove expected: firstElement,secondElement,fourthElement but was &1", cList)).
+
+        cList = "firstElement,secondElement,,fourthElement,".
+        cList = ListUtil:RemoveElement(cList, " ").
+        Assert:NotFalse("firstElement,secondElement,fourthElement" = cList, substitute("1 space remove expected: firstElement,secondElement,fourthElement but was &1", cList)).
+
+        cList = "firstElement,secondElement, ,fourthElement,".
+        cList = ListUtil:RemoveElement(cList, "").
+        Assert:NotFalse("firstElement,secondElement,fourthElement" = cList, substitute("2 empty string remove expected: firstElement,secondElement,fourthElement but was &1", cList)).
+
+        cList = "firstElement,secondElement, ,fourthElement,".
+        cList = ListUtil:RemoveElement(cList, " ").
+        Assert:NotFalse("firstElement,secondElement,fourthElement" = cList, substitute("2 space remove expected: firstElement,secondElement,fourthElement but was &1", cList)).
         
-        Assert:Equals(lookup(cElement, cList), 0).
+        cList = "firstElement,secondElement,secondElement,secondElement,secondElement,firstElement".
+        cList = ListUtil:RemoveElement(cList, "secondElement").
+        Assert:Equals("firstElement,firstElement", cList).  
 
     end method.
 
@@ -207,11 +318,30 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement|secondElement|thirdElement|fourthElement".
-            
         cList = ListUtil:RemoveElementByPosition(cList, 2, "|").
+        Assert:Equals("firstElement|thirdElement|fourthElement", cList).
         
-        Assert:Equals(lookup("secondElement", cList), 0).
-
+        cList = ListUtil:RemoveElementByPosition(cList, 1, "|").
+        Assert:Equals("thirdElement|fourthElement", cList).
+        
+        cList = ListUtil:RemoveElementByPosition(cList, 2, "|").
+        Assert:Equals("thirdElement", cList).
+        
+        cList = "firstElement|secondElement|||thirdElement". 
+        cList = ListUtil:RemoveElementByPosition(cList, 3, "|").
+        Assert:Equals("firstElement|secondElement||thirdElement", cList).
+        
+        cList = "firstElement|||thirdElement|fourthElement||||||  |". 
+        cList = ListUtil:RemoveElementByPosition(cList, 2, "|").
+        Assert:Equals("firstElement||thirdElement|fourthElement||||||  |", cList).
+        
+        cList = "|firstElement|||thirdElement|fourthElement|". 
+        cList = ListUtil:RemoveElementByPosition(cList, 1, "|").
+        Assert:Equals("firstElement|||thirdElement|fourthElement|", cList).
+        
+        cList = ListUtil:RemoveElementByPosition(cList, 6, "|").
+        Assert:Equals("firstElement|||thirdElement|fourthElement", cList).
+        
     end method.  
     
     /*------------------------------------------------------------------------------
@@ -222,11 +352,30 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement,secondElement,thirdElement,fourthElement".
-            
         cList = ListUtil:RemoveElementByPosition(cList, 2).
+        Assert:Equals("firstElement,thirdElement,fourthElement", cList).
         
-        Assert:Equals(lookup("secondElement", cList), 0).
-
+        cList = ListUtil:RemoveElementByPosition(cList, 1).
+        Assert:Equals("thirdElement,fourthElement", cList).
+        
+        cList = ListUtil:RemoveElementByPosition(cList, 2).
+        Assert:Equals("thirdElement", cList).
+        
+        cList = "firstElement,secondElement,,,thirdElement". 
+        cList = ListUtil:RemoveElementByPosition(cList, 3).
+        Assert:Equals("firstElement,secondElement,,thirdElement", cList).
+        
+        cList = "firstElement,,,thirdElement,fourthElement,,,,,,  ,". 
+        cList = ListUtil:RemoveElementByPosition(cList, 2).
+        Assert:Equals("firstElement,,thirdElement,fourthElement,,,,,,  ,", cList).
+        
+        cList = ",firstElement,,,thirdElement,fourthElement,". 
+        cList = ListUtil:RemoveElementByPosition(cList, 1).
+        Assert:Equals("firstElement,,,thirdElement,fourthElement,", cList).
+        
+        cList = ListUtil:RemoveElementByPosition(cList, 6).
+        Assert:Equals("firstElement,,,thirdElement,fourthElement", cList).
+        
     end method.   
 
     /*------------------------------------------------------------------------------
@@ -234,11 +383,10 @@ class Tests.ListUtilUnitTest:
     ------------------------------------------------------------------------------*/
     @Test.
     method public void TestHasElement():
-        define variable cList    as List   no-undo. 
+        define variable cList as List no-undo. 
         
         cList = GetInitialList().
      
-
         Assert:Equals(ListUtil:HasElement(cList, new String("Element")), false).
         Assert:Equals(ListUtil:HasElement(cList, new String("firstElement")), true).
         Assert:Equals(ListUtil:HasElement(cList, new String("fourthElement")), true).
@@ -265,7 +413,7 @@ class Tests.ListUtilUnitTest:
     ------------------------------------------------------------------------------*/
     @Test.
     method public void TestGetFirstElement():
-        define variable cList    as List   no-undo. 
+        define variable cList as List no-undo. 
         
         cList = GetInitialList().
 
@@ -281,9 +429,11 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement|secondElement|thirdElement|fourthElement".
-
         Assert:Equals(ListUtil:GetFirstElement(cList, "|"), "firstElement").
         
+        cList = "|firstElement|secondElement|thirdElement|fourthElement".
+        Assert:Equals(ListUtil:GetFirstElement(cList, "|"), "").
+                
     end method.    
 
     /*------------------------------------------------------------------------------
@@ -294,8 +444,10 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement,secondElement,thirdElement,fourthElement".
-
         Assert:Equals(ListUtil:GetFirstElement(cList), "firstElement").
+        
+        cList = ",firstElement,secondElement,thirdElement,fourthElement".
+        Assert:Equals(ListUtil:GetFirstElement(cList), "").
         
     end method. 
 
@@ -320,8 +472,10 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement|secondElement|thirdElement|fourthElement".
-
         Assert:Equals(ListUtil:GetLastElement(cList, "|"), "fourthElement").
+        
+        cList = "firstElement|secondElement|thirdElement|fourthElement|".
+        Assert:Equals(ListUtil:GetLastElement(cList, "|"), "").
         
     end method.    
     
@@ -333,8 +487,10 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement,secondElement,thirdElement,fourthElement".
-
         Assert:Equals(ListUtil:GetLastElement(cList), "fourthElement").
+        
+        cList = "firstElement,secondElement,thirdElement,fourthElement,".
+        Assert:Equals(ListUtil:GetLastElement(cList), "").
         
     end method. 
     
@@ -362,13 +518,12 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement|secondElement|thirdElement|fourthElement".
-        
         cList = ListUtil:SortList(cList, "|").
+        Assert:Equals("firstElement|fourthElement|secondElement|thirdElement", cList).
         
-        Assert:Equals(entry(1, cList, "|"), "firstElement").
-        Assert:Equals(entry(2, cList, "|"), "fourthElement").
-        Assert:Equals(entry(3, cList, "|"), "secondElement").
-        Assert:Equals(entry(4, cList, "|"), "thirdElement").
+        cList = "|firstElement||fourthElement|secondElement|thirdElement||".
+        cList = ListUtil:SortList(cList, "|").
+        Assert:Equals("||||firstElement|fourthElement|secondElement|thirdElement", cList).
         
     end method.
     
@@ -380,13 +535,12 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement,secondElement,thirdElement,fourthElement".
-        
         cList = ListUtil:SortList(cList).
+        Assert:Equals("firstElement,fourthElement,secondElement,thirdElement", cList).
         
-        Assert:Equals(entry(1, cList, ","), "firstElement").
-        Assert:Equals(entry(2, cList, ","), "fourthElement").
-        Assert:Equals(entry(3, cList, ","), "secondElement").
-        Assert:Equals(entry(4, cList, ","), "thirdElement").
+        cList = ",firstElement,,fourthElement,secondElement,thirdElement,,".
+        cList = ListUtil:SortList(cList).
+        Assert:Equals(",,,,firstElement,fourthElement,secondElement,thirdElement", cList).
         
     end method.
 
@@ -415,11 +569,12 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement|secondElement|thirdElement|fourthElement".
-
         Assert:Equals(ListUtil:HasDuplicates(cList, "|"), false).
 
-        cList = ListUtil:AddElement(cList, "secondElement", "|").
-        
+        cList = "firstElement|secondElement|thirdElement|secondElement|fourthElement".
+        Assert:Equals(ListUtil:HasDuplicates(cList, "|"), true).
+
+        cList = "|firstElement|secondElement|thirdElement|fourthElement|".
         Assert:Equals(ListUtil:HasDuplicates(cList, "|"), true).
 
     end method.
@@ -432,12 +587,14 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement,secondElement,thirdElement,fourthElement".
-
-        Assert:Equals(ListUtil:HasDuplicates(cList), false).
+        Assert:Equals(false, ListUtil:HasDuplicates(cList)).
         
-        cList = ListUtil:AddElement(cList, "secondElement").
-        
+        cList = "firstElement,secondElement,thirdElement,secondElement,fourthElement".
         Assert:Equals(ListUtil:HasDuplicates(cList), true).
+
+        cList = ",firstElement,secondElement,thirdElement,fourthElement,".
+        Assert:Equals(ListUtil:HasDuplicates(cList), true).
+
 
     end method.
 
@@ -467,13 +624,17 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement|secondElement|thirdElement|fourthElement".
-
         Assert:Equals(ListUtil:HasEmptyElements(cList, "|"), false).
 
-        clist = ListUtil:AddElement(cList, " ", "|").
-
+        cList = "firstElement|secondElement|thirdElement|fourthElement|".
         Assert:Equals(ListUtil:HasEmptyElements(cList, "|"), true).
-
+        
+        cList = "|firstElement|secondElement|thirdElement|fourthElement".
+        Assert:Equals(ListUtil:HasEmptyElements(cList, "|"), true).
+        
+        cList = "firstElement||secondElement|thirdElement|fourthElement".
+        Assert:Equals(ListUtil:HasEmptyElements(cList, "|"), true).
+        
     end method.
        
     /*------------------------------------------------------------------------------
@@ -484,11 +645,15 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement,secondElement,thirdElement,fourthElement".
-
         Assert:Equals(ListUtil:HasEmptyElements(cList), false).
 
-        clist = ListUtil:AddElement(cList, " ").
+        cList = "firstElement,secondElement,thirdElement,fourthElement,".
+        Assert:Equals(ListUtil:HasEmptyElements(cList), true).
 
+        cList = ",firstElement,secondElement,thirdElement,fourthElement".
+        Assert:Equals(ListUtil:HasEmptyElements(cList), true).
+
+        cList = "firstElement,secondElement,,thirdElement,fourthElement".
         Assert:Equals(ListUtil:HasEmptyElements(cList), true).
 
     end method.
@@ -521,14 +686,20 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement|secondElement|thirdElement|fourthElement".
-
-        cList = ListUtil:AddElementByPosition(cList, " ", "|", 2).
-
-        Assert:NonZero(index(cList, " ")).
-
         cList = ListUtil:RemoveEmptyElements(cList, "|").
+        Assert:Equals("firstElement|secondElement|thirdElement|fourthElement", cList).
         
-        Assert:IsZero(lookup(" ", cList)).
+        cList = "||firstElement||secondElement|thirdElement|fourthElement".
+        cList = ListUtil:RemoveEmptyElements(cList, "|").
+        Assert:Equals("firstElement|secondElement|thirdElement|fourthElement", cList).
+        
+        cList = "|firstElement|secondElement|thirdElement|fourthElement||".
+        cList = ListUtil:RemoveEmptyElements(cList, "|").
+        Assert:Equals("firstElement|secondElement|thirdElement|fourthElement", cList).
+        
+        cList = "firstElement|||thirdElement|fourthElement||||||  |".
+        cList = ListUtil:RemoveEmptyElements(cList, "|").
+        Assert:Equals("firstElement|thirdElement|fourthElement", cList).
 
     end method.    
 
@@ -540,15 +711,79 @@ class Tests.ListUtilUnitTest:
         define variable cList as character no-undo. 
         
         cList = "firstElement,secondElement,thirdElement,fourthElement".
-
-        cList = ListUtil:AddElementByPosition(cList, " ", 2).
-
-        Assert:NonZero(index(cList, " ")).
-
         cList = ListUtil:RemoveEmptyElements(cList).
+        Assert:Equals("firstElement,secondElement,thirdElement,fourthElement", cList).
         
-        Assert:IsZero(lookup(" ", cList)).
+        cList = ",,firstElement,,secondElement,thirdElement,fourthElement".
+        cList = ListUtil:RemoveEmptyElements(cList).
+        Assert:Equals("firstElement,secondElement,thirdElement,fourthElement", cList).
+        
+        cList = ",firstElement,secondElement,thirdElement,fourthElement,,".
+        cList = ListUtil:RemoveEmptyElements(cList).
+        Assert:Equals("firstElement,secondElement,thirdElement,fourthElement", cList).
+        
+        cList = "firstElement,,,thirdElement,fourthElement,,,,,,  ,".
+        cList = ListUtil:RemoveEmptyElements(cList).
+        Assert:Equals("firstElement,thirdElement,fourthElement", cList).
 
+    end method.  
+    
+    /*------------------------------------------------------------------------------
+        Purpose: Test RemoveDuplicateElements method
+    ------------------------------------------------------------------------------*/
+    @Test.
+    method public void TestRemoveDuplicateElementsCharacter():
+        define variable cList as character no-undo. 
+        
+        cList = "firstElement|secondElement|secondElement|thirdElement|fourthElement| ||fifthElement|fifthElement||sixthElement|fifthElement| |seventhElement|eighthElement|firstElement|fifthElement".
+        cList = ListUtil:RemoveDuplicateElements(cList, "|").
+        Assert:Equals("thirdElement|fourthElement|sixthElement|seventhElement|eighthElement", cList).
+
+        cList = "firstElement|||secondElement|fifthElement|fifthElement|fourthElement|sixthElement".
+        cList = ListUtil:RemoveDuplicateElements(cList, "|").
+        Assert:Equals("firstElement|secondElement|fourthElement|sixthElement", cList).
+
+        cList = "firstElement|||   |secondElement|fifthElement|fifthElement|fourthElement|fourthElement|fourthElement|  |||     |sixthElement".
+        cList = ListUtil:RemoveDuplicateElements(cList, "|").
+        Assert:Equals("firstElement|secondElement|sixthElement", cList).
+
+        cList = "|||firstElement||secondElement||thirdElement||".
+        cList = ListUtil:RemoveDuplicateElements(cList, "|").
+        Assert:Equals("firstElement|secondElement|thirdElement", cList).
+        
+        cList = "|firstElement|secondElement|thirdElement".
+        cList = ListUtil:RemoveDuplicateElements(cList, "|").
+        Assert:Equals("|firstElement|secondElement|thirdElement", cList).
+        
+    end method. 
+
+    /*------------------------------------------------------------------------------
+        Purpose: Test RemoveDuplicateElements method
+    ------------------------------------------------------------------------------*/
+    @Test.
+    method public void TestRemoveDuplicateElementsCharacterDefaultSeparator():
+        define variable cList as character no-undo. 
+        
+        cList = "firstElement,secondElement,secondElement,thirdElement,fourthElement, ,,fifthElement,fifthElement,,sixthElement,fifthElement, ,seventhElement,eighthElement,firstElement,fifthElement".
+        cList = ListUtil:RemoveDuplicateElements(cList).
+        Assert:Equals("thirdElement,fourthElement,sixthElement,seventhElement,eighthElement", cList).
+
+        cList = "firstElement,,,secondElement,fifthElement,fifthElement,fourthElement,sixthElement".
+        cList = ListUtil:RemoveDuplicateElements(cList).
+        Assert:Equals("firstElement,secondElement,fourthElement,sixthElement", cList).
+
+        cList = "firstElement,,,   ,secondElement,fifthElement,fifthElement,fourthElement,fourthElement,fourthElement,  ,,,     ,sixthElement".
+        cList = ListUtil:RemoveDuplicateElements(cList).
+        Assert:Equals("firstElement,secondElement,sixthElement", cList).
+
+        cList = ",,,firstElement,,secondElement,,thirdElement,,".
+        cList = ListUtil:RemoveDuplicateElements(cList).
+        Assert:Equals("firstElement,secondElement,thirdElement", cList).
+        
+        cList = ",firstElement,secondElement,thirdElement".
+        cList = ListUtil:RemoveDuplicateElements(cList).
+        Assert:Equals(",firstElement,secondElement,thirdElement", cList).
+        
     end method.  
 
     /*------------------------------------------------------------------------------

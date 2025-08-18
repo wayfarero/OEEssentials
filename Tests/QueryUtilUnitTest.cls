@@ -11,7 +11,7 @@
 block-level on error undo, throw.
 
 using OpenEdge.Core.Assert.
-using Utils.QueryUtil.
+using oeessentials.QueryUtil.
 
 class Tests.QueryUtilUnitTest: 
     
@@ -178,12 +178,18 @@ class Tests.QueryUtilUnitTest:
         define variable cBufferNames   as character no-undo.
         define variable i64ResultCount as int64     no-undo.
     
-        cQuery = "FOR EACH Customer, EACH Order WHERE Order.Cust-Num = Customer.Cust-Num".
+        cQuery = "FOR EACH Customer, EACH Order WHERE Order.Cust-Num = Customer.CustNum".
         cBufferNames = "Customer,Order".
     
         i64ResultCount = QueryUtil:GetNumberOfResultsFromQuery(cQuery, cBufferNames).
         
-        Assert:IsTrue(i64ResultCount > 0, "Result count should be greater than 0 for multiple buffers.").
+        Assert:RaiseError("Should throw error!").
+
+        catch err as Progress.Lang.AppError:
+            Assert:IsTrue(err:GetMessage(1) begins "Invalid query string: ", "Expected an invalid query string exception" ).
+        end catch.
+
+
         
     end method.
     

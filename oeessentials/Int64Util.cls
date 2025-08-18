@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.Int64Util: 
+class oeessentials.Int64Util: 
     
     /*------------------------------------------------------------------------------
         Purpose: Check if a given int64 is zero

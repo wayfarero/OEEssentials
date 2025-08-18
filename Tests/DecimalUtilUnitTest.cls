@@ -12,7 +12,7 @@ block-level on error undo, throw.
 
 using OpenEdge.Core.Assert.
 using OpenEdge.Core.Session.
-using Utils.DecimalUtil.
+using oeessentials.DecimalUtil.
 
 class Tests.DecimalUtilUnitTest: 
 

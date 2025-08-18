@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.LogicalUtil:
+class oeessentials.LogicalUtil:
 
     /*------------------------------------------------------------------------------
         Purpose: Checks if a logical value is null (?)

@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.StringUtil:
+class oeessentials.StringUtil:
 
     /*------------------------------------------------------------------------------
         Purpose: Check if string is empty

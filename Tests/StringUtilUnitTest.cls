@@ -11,7 +11,7 @@
 block-level on error undo, throw.
 
 using OpenEdge.Core.Assert.
-using Utils.StringUtil.
+using oeessentials.StringUtil.
 
 class Tests.StringUtilUnitTest: 
     

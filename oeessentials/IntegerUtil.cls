@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.IntegerUtil:
+class oeessentials.IntegerUtil:
     
     /*------------------------------------------------------------------------------
         Purpose: Returns the absolute value of a given integer

@@ -11,7 +11,7 @@
 block-level on error undo, throw.
 
 using OpenEdge.Core.Assert from propath.
-using Utils.MeasurementUnitUtil from propath.
+using oeessentials.MeasurementUnitUtil from propath.
 
 class Tests.MeasurementUnitUtilTests: 
     

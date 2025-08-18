@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.RegexLinuxUtil:
+class oeessentials.RegexLinuxUtil:
     
     /*------------------------------------------------------------------------------
         Purpose: Matches a string against a regex pattern using a Linux command

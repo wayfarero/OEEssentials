@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.SessionUtil:
+class oeessentials.SessionUtil:
 
     /*------------------------------------------------------------------------------
         Purpose: Retrieves the current session date format

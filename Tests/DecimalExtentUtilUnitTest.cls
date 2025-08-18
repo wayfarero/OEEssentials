@@ -11,7 +11,7 @@
 block-level on error undo, throw.
 
 using OpenEdge.Core.Assert.
-using Utils.DecimalExtentUtil.
+using oeessentials.DecimalExtentUtil.
 
 class Tests.DecimalExtentUtilUnitTest: 
     

@@ -14,7 +14,7 @@ block-level on error undo, throw.
 using System.*.
 &ENDIF
 
-class Utils.MathUtil: 
+class oeessentials.MathUtil: 
 
     /*------------------------------------------------------------------------------
         Purpose: Calculate the age in years based on a birthdate
@@ -23,17 +23,8 @@ class Utils.MathUtil:
         @return integer, the calculated age in years
     ------------------------------------------------------------------------------*/
     method public static integer CalculateAge( input ipdBirthDate as date ):
-        define variable dCurrentDate as date    no-undo.
-        define variable iAge         as integer no-undo.
-        
-        assign 
-            dCurrentDate = today
-            iAge         = year(dCurrentDate) - year(ipdBirthDate).
 
-        if month(dCurrentDate) > month(dCurrentDate) or (month(ipdBirthDate) = month(dCurrentDate) and day(ipdBirthDate) > day(dCurrentDate)) then
-            iAge = iAge - 1.
-
-        return iAge.
+        return integer(interval(now, ipdBirthDate, "years")).
 
     end method.
 

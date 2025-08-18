@@ -10,7 +10,7 @@
 
 block-level on error undo, throw.
 
-class Utils.MemptrUtil:
+class oeessentials.MemptrUtil:
 
     /*------------------------------------------------------------------------------
         Purpose: Determines if the given memptr is null (unallocated or zero size)

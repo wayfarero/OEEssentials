@@ -10,7 +10,9 @@
 
 block-level on error undo, throw.
 
-class Utils.QueryUtil:
+using Progress.Lang.AppError from propath.
+
+class oeessentials.QueryUtil:
     
     /*------------------------------------------------------------------------------
         Purpose: Initializes a dynamic query on the given table
@@ -214,6 +216,7 @@ class Utils.QueryUtil:
         define variable iCount         as integer   no-undo.
         define variable iPos           as integer   no-undo.
         define variable cModifiedQuery as character no-undo.
+        define variable lQueryPrepared as logical   no-undo.
 
         create query hQuery.
 
@@ -235,7 +238,11 @@ class Utils.QueryUtil:
         else
             cModifiedQuery = ipcQuery.
             
-        hQuery:query-prepare(string(cModifiedQuery)).
+        
+        lQueryPrepared = hQuery:query-prepare(string(cModifiedQuery)) no-error.
+        if not lQueryPrepared 
+        then undo, throw new AppError(substitute("Invalid query string: &1", cModifiedQuery), 1 ).
+
         hQuery:query-open().
         
         i64ResultCount = hQuery:num-results.
